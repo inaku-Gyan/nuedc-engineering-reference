@@ -3,6 +3,9 @@ from __future__ import annotations
 import io
 import json
 import os
+import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -226,6 +229,31 @@ class PolicyGeneratorTests(unittest.TestCase):
                 0,
             )
         self.assertIn("third_party/nuedc-reference", output.getvalue())
+
+    def test_cli_writes_beside_script_not_current_working_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_name:
+            temporary = Path(temporary_name)
+            script_root = temporary / "knowledge-repository"
+            caller_root = temporary / "caller"
+            script_root.mkdir()
+            caller_root.mkdir()
+            shutil.copy2(REPO_ROOT / "configure_agent.py", script_root)
+            shutil.copytree(POLICY_DIR, script_root / "agent-policy")
+
+            result = subprocess.run(
+                [sys.executable, str(script_root / "configure_agent.py")],
+                cwd=caller_root,
+                input="1\ny\n",
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue((script_root / ".agent-mode.json").is_file())
+            self.assertTrue((script_root / "KNOWLEDGE_AGENT.md").is_file())
+            self.assertFalse((caller_root / ".agent-mode.json").exists())
+            self.assertFalse((caller_root / "KNOWLEDGE_AGENT.md").exists())
 
 
 if __name__ == "__main__":

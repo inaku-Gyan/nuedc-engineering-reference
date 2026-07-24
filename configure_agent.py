@@ -33,6 +33,7 @@ PRESET_FRAGMENTS = {
     ),
 }
 INTEGRATION_PROMPT_KINDS = ("parent", "user", "both")
+SCRIPT_ROOT = Path(__file__).resolve().parent
 
 
 class ConfigurationError(ValueError):
@@ -372,8 +373,9 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    root = Path(__file__).resolve().parent
-    generator = PolicyGenerator(root)
+    # Generated files belong beside this script, regardless of the caller's
+    # current working directory.
+    generator = PolicyGenerator(SCRIPT_ROOT)
     if args.print_integration_prompt is not None:
         try:
             prompt = generator.render_integration_prompt(
