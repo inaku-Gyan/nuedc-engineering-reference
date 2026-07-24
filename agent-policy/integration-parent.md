@@ -1,9 +1,11 @@
 ## NUEDC engineering knowledge base
 
-A reusable NUEDC engineering knowledge base is available at
-`<NUEDC_REFERENCE_PATH>`.
+`<NUEDC_REFERENCE_PATH>` is an Agent-oriented NUEDC engineering reference repository, not project
+source code. It curates official manuals, datasheets, and other originals (usually PDFs) alongside
+selective extracts, concise summaries, metadata, indexes, and source links. Its purpose is to help
+Agents locate and verify reusable hardware and toolchain facts without loading whole documents.
 
-Use it only when the task involves NUEDC, electronic components, development boards,
+Consult it only when the task involves NUEDC, electronic components, development boards,
 instruments, embedded toolchains, hardware design, measurement, or debugging:
 
 1. If `<NUEDC_REFERENCE_PATH>/KNOWLEDGE_AGENT.md` exists, read and follow it before using or
