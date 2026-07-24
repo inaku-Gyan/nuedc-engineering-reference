@@ -1,0 +1,64 @@
+schema_version: 1
+id: hw-board-lckfb-tmx-mspm0g3507
+title: "立创·天猛星 MSPM0G3507 开发板"
+kind: hardware
+category: board
+vendor: lckfb
+models:
+  - LCKFB-TMX-MSPM0G3507
+aliases:
+  - 天猛星
+  - 天猛星 MSPM0G3507
+  - C42378531
+  - WJ1511101
+tags:
+  - mspm0g3507
+  - development-board
+  - nuedc
+  - lckfb
+languages:
+  - zh-CN
+status: active
+importance: high
+summary_updated: 2026-07-24
+
+sources:
+  - file: originals/tmx-mspm0g3507-board-specification.pdf
+    type: board-specification
+    title: "立创·天猛星 MSPM0G3507 开发板规格书"
+    document_id: WJ1511101
+    revision: unknown
+    published: 2024-12-09
+    obtained: 2026-07-24
+    url: "https://wiki.lckfb.com/zh-hans/tmx-mspm0g3507/download-center.html"
+    sha256: "84425c48eab2654643543c053f46c88429241ba2b67ab8f241312f669c098930"
+    redistribution: unknown
+    notes:
+      - "两页均为图片，无可搜索文本层。published 取自 PDF 创建时间。"
+  - file: originals/tmx-mspm0g3507-schematic-2024-11-14.pdf
+    type: schematic
+    title: "立创·天猛星 MSPM0G3507 开发板原理图"
+    document_id: SCH_Schematic
+    revision: unknown
+    published: 2024-11-14
+    obtained: 2026-07-24
+    url: "https://wiki.lckfb.com/zh-hans/tmx-mspm0g3507/download-center.html"
+    sha256: "966d43868754eeebb8ec3ab8767c3a3b950ac109caa4e98ed5d8612e7003fc0f"
+    redistribution: unknown
+    notes:
+      - "PDF 于 2026-07-24 导出；published 取自原理图标题栏。"
+
+extraction:
+  policy: selective
+  covered:
+    - onboard-resources
+    - power-and-reference-selection
+    - clock-and-core-warnings
+    - debug-and-download
+  not_covered:
+    - complete-header-pinout
+    - bill-of-materials
+    - pcb-layout
+    - software-examples
+  last_reviewed: 2026-07-24
+

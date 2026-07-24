@@ -1,0 +1,51 @@
+schema_version: 1
+id: hw-motor-control-feetech-ft6335m
+title: "飞特 FT6335M 360°磁编码数字舵机"
+kind: hardware
+category: motor-control
+vendor: feetech
+models:
+  - FT6335M
+aliases:
+  - FT-6335M
+  - FT-6335-C001
+tags:
+  - servo
+  - pwm
+  - magnetic-encoder
+  - 360-degree
+languages:
+  - zh-CN
+  - en
+status: active
+importance: high
+summary_updated: 2026-07-24
+
+sources:
+  - file: originals/ft6335m-product-specification-edition-a1.pdf
+    type: product-specification
+    title: "FT6335M 产品规格书"
+    document_id: unknown
+    revision: "Edition A/1"
+    published: 2020-10-28
+    obtained: 2026-07-24
+    url: "https://www.feetechrc.com/Data/feetechrc/upload/file/20211028/6377103693899633276811282.pdf"
+    sha256: "247c65cbab8929099b0807a5633949d83fee733f230c27b3afd8b83b425baccc"
+    redistribution: unknown
+    notes:
+      - "文件正文标为 A/1，但变更记录包含 2021-08-04 的 A/2 控制方向更新。"
+
+extraction:
+  policy: selective
+  covered:
+    - electrical-characteristics
+    - mechanical-characteristics
+    - pwm-control
+    - connector-pinout
+    - protection
+  not_covered:
+    - programming-procedure
+    - batch-differences
+    - measured-dynamic-response
+  last_reviewed: 2026-07-24
+

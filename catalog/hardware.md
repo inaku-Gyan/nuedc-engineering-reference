@@ -24,3 +24,19 @@ library/hardware/<category>/<vendor>/<model>/
 无明确厂商的通用主题不应伪造 `vendor`；应优先写入 `knowledge/`，或使用
 明确的 `generic/` 并在元数据中说明。
 
+## 已入库资料
+
+### MCU
+
+- [TI MSPM0G3507](../library/hardware/mcu/ti/mspm0g3507/README.md)：
+  MSPM0G350x 中文数据表 Rev. C，涵盖器件特性、引脚和电气参数。
+
+### 开发板
+
+- [立创·天猛星 MSPM0G3507](../library/hardware/board/lckfb/tmx-mspm0g3507/README.md)：
+  板卡规格书、引脚复用图和三页原理图。
+
+### 电机与执行器
+
+- [飞特 FT6335M](../library/hardware/motor-control/feetech/ft6335m/README.md)：
+  360°磁编码 PWM 舵机规格、电气参数与控制速查。

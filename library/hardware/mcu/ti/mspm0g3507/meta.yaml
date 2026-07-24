@@ -1,0 +1,50 @@
+schema_version: 1
+id: hw-mcu-ti-mspm0g3507
+title: "TI MSPM0G350x 混合信号微控制器"
+kind: hardware
+category: mcu
+vendor: texas-instruments
+models:
+  - MSPM0G3505
+  - MSPM0G3506
+  - MSPM0G3507
+aliases:
+  - MSPM0G350x
+  - MSPM0G3507
+tags:
+  - arm-cortex-m0plus
+  - mixed-signal
+  - can-fd
+  - motor-control
+languages:
+  - zh-CN
+status: active
+importance: high
+summary_updated: 2026-07-24
+
+sources:
+  - file: originals/mspm0g350x-datasheet-zh-rev-c.pdf
+    type: datasheet
+    title: "MSPM0G350x 混合信号微控制器，具备 CAN-FD 接口"
+    document_id: ZHCSSC4C
+    control_document_id: SLASEX6
+    revision: "Rev. C"
+    published: "2025-10"
+    obtained: 2026-07-24
+    url: "https://www.ti.com.cn/cn/lit/ds/symlink/mspm0g3507.pdf"
+    sha256: "657a2107a43f5cb4e0eace1da13ed630bf33085caa8063a8ebef36e36c1d9fad"
+    redistribution: unknown
+
+extraction:
+  policy: selective
+  covered:
+    - device-positioning
+    - key-capabilities
+    - document-routing
+  not_covered:
+    - pin-multiplexing
+    - electrical-characteristics
+    - package-drawings
+    - peripheral-registers
+  last_reviewed: 2026-07-24
+
