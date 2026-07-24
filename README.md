@@ -28,18 +28,18 @@
 python configure_agent.py
 ```
 
-用户选择权限和 Git 行为后，脚本会生成被 Git 忽略的 `.agent-mode.json` 和根
-`AGENTS.md`。Agent 只读取已经展开的当前规则，不需要加载、校验或理解不同权限
-预设。再次运行脚本可以修改选择或刷新提示词。
+用户选择权限和 Git 行为后，脚本会生成被 Git 忽略的 `.agent-mode.json` 和
+`KNOWLEDGE_AGENT.md`。Agent 只读取已经展开的当前知识库规则，不需要加载、校验
+或理解不同权限预设。再次运行脚本可以修改选择或刷新提示词。
 
 完整设置方法和四种权限预设见 [`docs/agent-setup.md`](docs/agent-setup.md)。
 
 ## 作为业务仓库的子目录
 
 业务仓库从根目录启动 Agent 时，不应依赖 Agent 自动发现任意子目录或 Submodule
-内部的 `AGENTS.md`。建议在业务仓库根 `AGENTS.md` 中加入一个短的触发式入口：
-只有任务涉及电赛、器件、工具链或硬件调试时，才读取本知识库的本地指令并从
-`catalog/README.md` 开始。
+内部的 `KNOWLEDGE_AGENT.md`。建议在业务仓库根 `AGENTS.md` 中加入一个短的
+触发式入口：只有任务涉及电赛、器件、工具链或硬件调试时，才读取本知识库的本地
+指令并从 `catalog/README.md` 开始。
 
 可直接复制的父仓库片段、单次用户提示词和 Submodule 初始化命令见
 [`docs/parent-repository-integration.md`](docs/parent-repository-integration.md)。
@@ -53,6 +53,7 @@ python configure_agent.py --print-integration-prompt third_party/nuedc-engineeri
 
 ```text
 .
+├── AGENTS.md                 # 开发和维护本仓库的规则
 ├── agent-policy/             # 生成 Agent 提示词的受控规则分片
 ├── configure_agent.py        # 本地提示词配置与生成工具
 ├── .agent-mode.example.json  # 本地配置格式示例

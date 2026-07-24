@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Interactively generate a local, capability-resolved AGENTS.md."""
+"""Interactively generate local, capability-resolved knowledge instructions."""
 
 from __future__ import annotations
 
@@ -65,7 +65,7 @@ class PolicyGenerator:
             else self.root / "agent-policy"
         )
         self.config_path = self.root / ".agent-mode.json"
-        self.prompt_path = self.root / "AGENTS.md"
+        self.prompt_path = self.root / "KNOWLEDGE_AGENT.md"
 
     def parse_configuration(self, raw: object) -> AgentConfiguration:
         if not isinstance(raw, dict):
@@ -252,10 +252,13 @@ class PolicyGenerator:
         try:
             actual = self.prompt_path.read_text(encoding="utf-8")
         except FileNotFoundError:
-            return False, "未找到生成的 AGENTS.md"
+            return False, "未找到生成的 KNOWLEDGE_AGENT.md"
         if actual != expected:
-            return False, "AGENTS.md 与当前配置不一致，请重新运行配置工具"
-        return True, "配置和 AGENTS.md 一致"
+            return (
+                False,
+                "KNOWLEDGE_AGENT.md 与当前配置不一致，请重新运行配置工具",
+            )
+        return True, "配置和 KNOWLEDGE_AGENT.md 一致"
 
 
 def ask_yes_no(question: str, default: bool) -> bool:
@@ -342,13 +345,13 @@ def run_interactive(generator: PolicyGenerator) -> int:
         print(f"生成失败：{exc}", file=sys.stderr)
         return 2
 
-    print("配置和 AGENTS.md 已生成。")
+    print("配置和 KNOWLEDGE_AGENT.md 已生成。")
     return 0
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="配置并生成当前 checkout 的本地 AGENTS.md"
+        description="配置并生成当前 checkout 的本地 KNOWLEDGE_AGENT.md"
     )
     action_group = parser.add_mutually_exclusive_group()
     action_group.add_argument(

@@ -135,7 +135,9 @@ class PolicyGeneratorTests(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         config = AgentConfiguration("autonomous", True, False)
         generator.write(config)
-        self.assertEqual(generator.check(), (True, "配置和 AGENTS.md 一致"))
+        self.assertEqual(
+            generator.check(), (True, "配置和 KNOWLEDGE_AGENT.md 一致")
+        )
 
         generator.prompt_path.write_text("stale\n", encoding="utf-8")
         valid, message = generator.check()
@@ -176,6 +178,10 @@ class PolicyGeneratorTests(unittest.TestCase):
         config = AgentConfiguration("maintainer", True, False)
         raw = json.loads(generator.serialized_configuration(config))
         self.assertEqual(generator.parse_configuration(raw), config)
+
+    def test_generated_prompt_uses_knowledge_specific_filename(self) -> None:
+        generator = PolicyGenerator(REPO_ROOT)
+        self.assertEqual(generator.prompt_path.name, "KNOWLEDGE_AGENT.md")
 
     def test_parent_integration_prompt_substitutes_normalized_path(self) -> None:
         generator = PolicyGenerator(REPO_ROOT)

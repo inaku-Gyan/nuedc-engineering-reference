@@ -6,7 +6,7 @@ A reusable NUEDC engineering knowledge base is available at
 Use it only when the task involves NUEDC, electronic components, development boards,
 instruments, embedded toolchains, hardware design, measurement, or debugging:
 
-1. If `<NUEDC_REFERENCE_PATH>/AGENTS.md` exists, read and follow it before using or
+1. If `<NUEDC_REFERENCE_PATH>/KNOWLEDGE_AGENT.md` exists, read and follow it before using or
    changing the knowledge base.
 2. If that file is missing, treat the knowledge base as read-only, start from
    `<NUEDC_REFERENCE_PATH>/catalog/README.md`, and tell the user to run

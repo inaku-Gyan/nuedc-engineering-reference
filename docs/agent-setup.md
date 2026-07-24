@@ -1,7 +1,8 @@
 # Agent Setup
 
 本仓库不要求 Agent 在运行时读取或判断模式。用户先通过交互脚本选择一组权限，
-脚本再把对应规则展开为本地 `AGENTS.md`。Agent 只看到当前生效的直接指令。
+脚本再把对应规则展开为本地 `KNOWLEDGE_AGENT.md`。Agent 只看到当前生效的知识库
+指令。
 
 ## 首次设置
 
@@ -17,12 +18,12 @@ python configure_agent.py
 2. 在允许写入时选择是否自动提交；
 3. 在自动提交开启时选择是否自动推送；
 4. 展示权限、Git 副作用和生成文件；
-5. 确认后写入 `.agent-mode.json` 与根 `AGENTS.md`。
+5. 确认后写入 `.agent-mode.json` 与 `KNOWLEDGE_AGENT.md`。
 
 这两个文件均被 Git 忽略，每个 checkout 或 Submodule 工作树需要单独生成。
 
 如果知识库位于业务仓库的子目录，业务仓库根目录启动的 Agent 不一定会自动发现
-这里生成的 `AGENTS.md`。请同时按
+这里生成的 `KNOWLEDGE_AGENT.md`。请同时按
 [`parent-repository-integration.md`](parent-repository-integration.md) 在父仓库中
 声明知识库入口。
 
@@ -85,7 +86,8 @@ python configure_agent.py --print-integration-prompt third_party/nuedc-engineeri
 ## 受版本控制的规则源
 
 生成器从 `agent-policy/` 中组合公共检索、按需整理、资料获取、维护和 Git 行为
-分片。修改分片或生成器后，重新运行脚本即可刷新本地 `AGENTS.md`。
+分片。修改分片或生成器后，重新运行脚本即可刷新本地
+`KNOWLEDGE_AGENT.md`。
 
 生成稿不包含预设名、配置分支或其他预设的说明。它可以说明自己由设置工具生成，
 但 Agent 无需读取配置或模式手册。

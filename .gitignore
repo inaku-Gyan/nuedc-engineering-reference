@@ -17,7 +17,7 @@ tmp/
 ocr-work/
 
 # Locally generated Agent policy; see docs/agent-setup.md.
-/AGENTS.md
+/KNOWLEDGE_AGENT.md
 /.agent-mode.json
 
 # Generated local previews
