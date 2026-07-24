@@ -20,7 +20,7 @@ languages:
   - zh-CN
 status: active
 importance: high
-summary_updated: 2026-07-24
+summary_updated: 2026-07-25
 
 sources:
   - file: originals/mspm0g350x-datasheet-zh-rev-c.pdf
@@ -41,10 +41,10 @@ extraction:
     - device-positioning
     - key-capabilities
     - document-routing
+    - digital-io-input-voltage
   not_covered:
     - pin-multiplexing
-    - electrical-characteristics
+    - other-electrical-characteristics
     - package-drawings
     - peripheral-registers
-  last_reviewed: 2026-07-24
-
+  last_reviewed: 2026-07-25

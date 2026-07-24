@@ -1,0 +1,51 @@
+schema_version: 1
+id: hw-motor-control-zhongkewei-at8236
+title: "杭州中科微 AT8236 单通道有刷直流电机驱动芯片"
+kind: hardware
+category: motor-control
+vendor: zhongkewei
+models:
+  - AT8236
+  - AT8236N
+aliases:
+  - AT8236-S409
+tags:
+  - brushed-dc-motor
+  - h-bridge
+  - pwm
+  - current-regulation
+languages:
+  - zh-CN
+status: active
+importance: high
+summary_updated: 2026-07-25
+
+sources:
+  - file: originals/at8236-datasheet-v1.1.pdf
+    type: datasheet
+    title: "AT8236 单通道直流有刷电机驱动芯片"
+    document_id: AT8236-S409-V1.1
+    revision: "V1.1"
+    published: "unknown"
+    obtained: 2026-07-25
+    url: "https://datasheet.lcsc.com/datasheet/pdf/d8c76808c9e9a8c1969b3dbfc127e078.pdf?productCode=C2827823"
+    sha256: "4b6ce3562984d8b8689313c2556c1e57dc67d37facb5843e4af6f71fe9f89bb1"
+    redistribution: unknown
+    notes:
+      - "数据手册正文标注杭州中科微电子有限公司及 www.icofchina.com；原件由立创商城公开镜像获取。"
+      - "首页特点写 4A 连续/6A 峰值，第 3 页推荐工作条件写 3A 连续/4.5A 峰值。"
+
+extraction:
+  policy: selective
+  covered:
+    - electrical-characteristics
+    - logic-interface
+    - h-bridge-control
+    - current-regulation
+    - protection
+    - pcb-layout
+  not_covered:
+    - module-specific-implementation
+    - measured-thermal-performance
+    - batch-differences
+  last_reviewed: 2026-07-25

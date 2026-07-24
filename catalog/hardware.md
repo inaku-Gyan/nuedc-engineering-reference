@@ -40,3 +40,8 @@ library/hardware/<category>/<vendor>/<model>/
 
 - [飞特 FT6335M](../library/hardware/motor-control/feetech/ft6335m/README.md)：
   360°磁编码 PWM 舵机规格、电气参数与控制速查。
+
+### 电机驱动
+
+- [杭州中科微 AT8236](../library/hardware/motor-control/zhongkewei/at8236/README.md)：
+  单通道有刷直流电机 H 桥驱动芯片，涵盖推荐/极限电流、PWM、限流和保护。
