@@ -1,18 +1,20 @@
 ## Filling relevant knowledge gaps
 
-If the current task cannot be answered reliably because an object is absent, local material is
-insufficient or stale, or a controlling manual/erratum is missing, search for relevant sources.
+When a task needs an absent, insufficient, stale, or missing controlling source, search for
+relevant material.
 
 - Prefer manufacturers, standards bodies, NUEDC, and official project documentation.
-- Acquire only material directly relevant to the current task; stop once the gap is resolved and
-  a reusable repository entry exists.
+- Acquire only material needed for the task; stop after resolving the gap and creating a reusable
+  entry.
+- If access fails after reasonable attempts, give the user the document title or ID, revision,
+  URL, needed file/format, and blocker; ask for help obtaining it and resume when supplied.
 - Inspect candidates in an ignored temporary directory before moving them into `library/`.
-- For a new package, add a minimal `README.md`, valid `meta.yaml`, appropriately named originals,
-  selective extracts when useful, and a catalog entry with navigation value.
-- For every original, record its official URL, document ID/revision, obtained date, SHA-256, and
+- A new package needs a minimal `README.md`, valid `meta.yaml`, appropriately named originals,
+  useful selective extracts, and a catalog entry.
+- For each original, record its official URL, document ID/revision, obtained date, SHA-256, and
   applicable object. Confirm large binaries match Git LFS rules.
 - Publicly accessible official engineering material with unclear redistribution terms may be
   archived only with `redistribution: unknown`.
-- Do not archive paid, authenticated, confidential, leaked, or explicitly redistribution-
-  restricted material; retain only information and links that may be shared publicly.
+- Never archive paid, authenticated, confidential, leaked, or redistribution-restricted material;
+  retain only publicly shareable information and links.
 - Do not replace selective summaries with full OCR or full Markdown conversion.

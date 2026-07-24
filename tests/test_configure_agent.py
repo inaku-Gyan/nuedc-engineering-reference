@@ -62,7 +62,9 @@ class PolicyGeneratorTests(unittest.TestCase):
 
         self.assertIn("Treat this repository as read-only", readonly)
         self.assertNotIn("Filling relevant knowledge gaps", readonly)
+        self.assertNotIn("ask for help obtaining it", readonly)
         self.assertIn("Filling relevant knowledge gaps", autonomous)
+        self.assertIn("ask for help obtaining it", autonomous)
         self.assertIn("Leave repository edits in the working tree", autonomous)
         self.assertIn("Repository maintenance", maintainer)
         self.assertIn("create a local commit", maintainer)
