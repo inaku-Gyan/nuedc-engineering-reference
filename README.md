@@ -14,17 +14,36 @@
 
 ## 从哪里开始
 
-1. 查资料：先打开 [`catalog/README.md`](catalog/README.md)。
-2. 查某个器件或工具：进入 `library/` 下对应的资料包，先读资料包的 `README.md`。
-3. 查跨器件经验：进入 `knowledge/`。
-4. 添加资料：遵循 [`docs/ingestion-guide.md`](docs/ingestion-guide.md)。
-5. Agent 使用本仓库：遵循 [`AGENTS.md`](AGENTS.md)。
+1. Agent 首次使用：根据 [Agent 模式](docs/agent-modes.md)初始化本地配置。
+2. 查资料：先打开 [`catalog/README.md`](catalog/README.md)。
+3. 查某个器件或工具：进入 `library/` 下对应的资料包，先读资料包的 `README.md`。
+4. 查跨器件经验：进入 `knowledge/`。
+5. 添加资料：遵循 [`docs/ingestion-guide.md`](docs/ingestion-guide.md)。
+6. Agent 使用本仓库：遵循 [`AGENTS.md`](AGENTS.md)。
+
+## Agent 模式配置
+
+每个本地 checkout 首次由 Agent 使用前都必须创建被 Git 忽略的
+`.agent-mode.yaml`。可以复制 [`.agent-mode.example.yaml`](.agent-mode.example.yaml)
+自行配置；如果文件不存在，Agent 必须暂停原任务，依次询问模式、自动提交和自动
+推送选项，展示最终 YAML 并在用户确认后创建。
+
+支持四种模式：
+
+- `readonly`：只读仓库，可联网核验；
+- `curate-on-use`：把本次实际使用的现有原件按需整理成摘要或摘录；
+- `autonomous`：资料缺失时围绕当前任务搜索、下载和整理入库；
+- `maintainer`：允许主动的全库质量维护，重大删除或重组仍需确认。
+
+配置格式、无效配置修复、临时权限提升和 Git 自动化规则见
+[`docs/agent-modes.md`](docs/agent-modes.md)。
 
 ## 目录结构
 
 ```text
 .
 ├── AGENTS.md                 # Agent 的检索、引用和上下文控制规则
+├── .agent-mode.example.yaml  # 本地 Agent 模式配置模板
 ├── catalog/                  # 全库轻量入口与导航，不存长篇正文
 │   ├── README.md
 │   ├── hardware.md
@@ -99,6 +118,6 @@ library/hardware/mcu/stmicroelectronics/stm32f103/
 ## 大文件
 
 PDF、压缩包、原理图工程等二进制文件建议使用 Git LFS。仓库已在
-`.gitattributes` 中提供常见规则。归档前还应确认许可允许再分发；不能归档时，
-只保存官方链接、文档编号、版本和校验信息。
-
+`.gitattributes` 中提供常见规则。公开可访问的官方工程资料在许可未明确时可以
+归档，但必须在元数据中标记 `redistribution: unknown`；付费、需登录、保密或
+明确限制传播的资料不得归档，只保存允许公开的链接和元数据。

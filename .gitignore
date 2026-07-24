@@ -7,11 +7,14 @@ Thumbs.db
 
 # Local extraction/OCR scratch data
 .cache/
+.agent-cache/
 .tmp/
 tmp/
 ocr-work/
 
+# Local Agent policy; see .agent-mode.example.yaml.
+/.agent-mode.yaml
+
 # Generated local previews
 *.preview.html
 *.preview.png
-
