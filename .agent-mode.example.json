@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "preset": "readonly",
+  "git": {
+    "auto_commit": false,
+    "auto_push": false
+  }
+}

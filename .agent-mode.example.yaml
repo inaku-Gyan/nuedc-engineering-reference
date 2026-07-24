@@ -1,9 +1,0 @@
-# Copy this file to .agent-mode.yaml and configure it before asking an Agent
-# to use this repository. The local file is intentionally ignored by Git.
-schema_version: 1
-mode: readonly
-
-git:
-  auto_commit: false
-  auto_push: false
-

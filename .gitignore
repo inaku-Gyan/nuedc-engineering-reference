@@ -5,6 +5,10 @@ Thumbs.db
 *.tmp
 *~
 
+# Python caches
+__pycache__/
+*.py[cod]
+
 # Local extraction/OCR scratch data
 .cache/
 .agent-cache/
@@ -12,8 +16,9 @@ Thumbs.db
 tmp/
 ocr-work/
 
-# Local Agent policy; see .agent-mode.example.yaml.
-/.agent-mode.yaml
+# Locally generated Agent policy; see docs/agent-setup.md.
+/AGENTS.md
+/.agent-mode.json
 
 # Generated local previews
 *.preview.html

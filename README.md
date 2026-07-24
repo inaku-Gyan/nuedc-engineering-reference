@@ -14,36 +14,33 @@
 
 ## 从哪里开始
 
-1. Agent 首次使用：根据 [Agent 模式](docs/agent-modes.md)初始化本地配置。
+1. Agent 首次使用：运行 `python configure_agent.py` 生成本地指令。
 2. 查资料：先打开 [`catalog/README.md`](catalog/README.md)。
 3. 查某个器件或工具：进入 `library/` 下对应的资料包，先读资料包的 `README.md`。
 4. 查跨器件经验：进入 `knowledge/`。
 5. 添加资料：遵循 [`docs/ingestion-guide.md`](docs/ingestion-guide.md)。
-6. Agent 使用本仓库：遵循 [`AGENTS.md`](AGENTS.md)。
 
-## Agent 模式配置
+## Agent 本地设置
 
-每个本地 checkout 首次由 Agent 使用前都必须创建被 Git 忽略的
-`.agent-mode.yaml`。可以复制 [`.agent-mode.example.yaml`](.agent-mode.example.yaml)
-自行配置；如果文件不存在，Agent 必须暂停原任务，依次询问模式、自动提交和自动
-推送选项，展示最终 YAML 并在用户确认后创建。
+每个本地 checkout 首次由 Agent 使用前，先运行无第三方依赖的交互脚本：
 
-支持四种模式：
+```powershell
+python configure_agent.py
+```
 
-- `readonly`：只读仓库，可联网核验；
-- `curate-on-use`：把本次实际使用的现有原件按需整理成摘要或摘录；
-- `autonomous`：资料缺失时围绕当前任务搜索、下载和整理入库；
-- `maintainer`：允许主动的全库质量维护，重大删除或重组仍需确认。
+用户选择权限和 Git 行为后，脚本会生成被 Git 忽略的 `.agent-mode.json` 和根
+`AGENTS.md`。Agent 只读取已经展开的当前规则，不需要加载、校验或理解不同权限
+预设。再次运行脚本可以修改选择或刷新提示词。
 
-配置格式、无效配置修复、临时权限提升和 Git 自动化规则见
-[`docs/agent-modes.md`](docs/agent-modes.md)。
+完整设置方法和四种权限预设见 [`docs/agent-setup.md`](docs/agent-setup.md)。
 
 ## 目录结构
 
 ```text
 .
-├── AGENTS.md                 # Agent 的检索、引用和上下文控制规则
-├── .agent-mode.example.yaml  # 本地 Agent 模式配置模板
+├── agent-policy/             # 生成 Agent 提示词的受控规则分片
+├── configure_agent.py        # 本地提示词配置与生成工具
+├── .agent-mode.example.json  # 本地配置格式示例
 ├── catalog/                  # 全库轻量入口与导航，不存长篇正文
 │   ├── README.md
 │   ├── hardware.md
