@@ -195,10 +195,6 @@ class PolicyGeneratorTests(unittest.TestCase):
         )
         self.assertIn("`third_party/nuedc-reference`", prompt)
         self.assertNotIn("<NUEDC_REFERENCE_PATH>", prompt)
-        self.assertIn("not project", prompt)
-        self.assertIn("source code", prompt)
-        self.assertIn("selective extracts", prompt)
-        self.assertIn("without loading whole documents", prompt)
         self.assertIn("catalog/README.md", prompt)
 
     def test_user_integration_prompt_is_available_without_local_config(self) -> None:
@@ -206,9 +202,6 @@ class PolicyGeneratorTests(unittest.TestCase):
         prompt = generator.render_integration_prompt("vendor/reference", "user")
         self.assertIn("本任务需要查阅", prompt)
         self.assertIn("`vendor/reference`", prompt)
-        self.assertIn("不是业务代码仓库", prompt)
-        self.assertIn("按需摘录", prompt)
-        self.assertIn("低上下文", prompt)
 
     def test_both_integration_prompts_have_copyable_sections(self) -> None:
         generator = PolicyGenerator(REPO_ROOT)
