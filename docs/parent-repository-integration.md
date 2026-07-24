@@ -13,6 +13,28 @@
 不同 Agent 对嵌套指令文件的发现策略可能不同。最稳妥的做法是在业务仓库根
 `AGENTS.md` 中提供一个很短的触发式入口。
 
+## 由脚本输出
+
+在知识库根目录运行以下命令，可以把实际路径直接代入提示词并输出到 stdout：
+
+```powershell
+python configure_agent.py --print-integration-prompt third_party/nuedc-engineering-reference
+```
+
+默认输出推荐的父仓库 `AGENTS.md` 片段。输出单次用户提示词：
+
+```powershell
+python configure_agent.py --print-integration-prompt third_party/nuedc-engineering-reference --prompt-kind user
+```
+
+同时输出两种示例：
+
+```powershell
+python configure_agent.py --print-integration-prompt third_party/nuedc-engineering-reference --prompt-kind both
+```
+
+该命令不需要 `.agent-mode.json`，也不会创建或修改文件。
+
 ## 推荐：业务仓库 `AGENTS.md` 片段
 
 将下面内容复制到业务仓库根 `AGENTS.md`，并把

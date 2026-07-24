@@ -43,6 +43,11 @@ python configure_agent.py
 
 可直接复制的父仓库片段、单次用户提示词和 Submodule 初始化命令见
 [`docs/parent-repository-integration.md`](docs/parent-repository-integration.md)。
+也可以直接输出已代入路径的父仓库提示词：
+
+```powershell
+python configure_agent.py --print-integration-prompt third_party/nuedc-engineering-reference
+```
 
 ## 目录结构
 

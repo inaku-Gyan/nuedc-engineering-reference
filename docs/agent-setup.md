@@ -73,6 +73,15 @@ python configure_agent.py --check
 检查命令不修改任何文件，匹配时退出码为 `0`，缺失、配置无效或提示词不一致时
 退出码为 `2`。
 
+为父仓库输出已代入路径的集成提示词：
+
+```powershell
+python configure_agent.py --print-integration-prompt third_party/nuedc-engineering-reference
+```
+
+完整选项见
+[`parent-repository-integration.md`](parent-repository-integration.md)。
+
 ## 受版本控制的规则源
 
 生成器从 `agent-policy/` 中组合公共检索、按需整理、资料获取、维护和 Git 行为

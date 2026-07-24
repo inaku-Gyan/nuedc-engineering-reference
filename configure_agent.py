@@ -32,6 +32,7 @@ PRESET_FRAGMENTS = {
         "maintenance.md",
     ),
 }
+INTEGRATION_PROMPT_KINDS = ("parent", "user", "both")
 
 
 class ConfigurationError(ValueError):
@@ -142,6 +143,47 @@ class PolicyGenerator:
             "Do not edit or replace it."
         )
         return header + "\n\n" + "\n\n".join(fragments) + "\n"
+
+    def render_integration_prompt(
+        self, reference_path: str, kind: str = "parent"
+    ) -> str:
+        normalized_path = reference_path.strip().replace("\\", "/").rstrip("/")
+        if (
+            not normalized_path
+            or "`" in normalized_path
+            or any(ord(character) < 32 for character in normalized_path)
+        ):
+            raise ConfigurationError(
+                "知识库路径不能为空，也不能包含反引号或控制字符"
+            )
+        if kind not in INTEGRATION_PROMPT_KINDS:
+            raise ConfigurationError(
+                "提示词类型必须是 parent、user 或 both"
+            )
+
+        def render_template(name: str) -> str:
+            path = self.policy_dir / name
+            try:
+                template = path.read_text(encoding="utf-8").strip()
+            except FileNotFoundError as exc:
+                raise ConfigurationError(f"缺少集成提示词模板：{path}") from exc
+            if "<NUEDC_REFERENCE_PATH>" not in template:
+                raise ConfigurationError(f"集成提示词模板缺少路径占位符：{path}")
+            return template.replace("<NUEDC_REFERENCE_PATH>", normalized_path)
+
+        parent = render_template("integration-parent.md")
+        user = render_template("integration-user.md")
+        if kind == "parent":
+            return parent + "\n"
+        if kind == "user":
+            return user + "\n"
+        return (
+            "# Parent AGENTS.md snippet\n\n"
+            + parent
+            + "\n\n# One-off user prompt\n\n"
+            + user
+            + "\n"
+        )
 
     def serialized_configuration(self, config: AgentConfiguration) -> str:
         return (
@@ -308,15 +350,39 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="配置并生成当前 checkout 的本地 AGENTS.md"
     )
-    parser.add_argument(
+    action_group = parser.add_mutually_exclusive_group()
+    action_group.add_argument(
         "--check",
         action="store_true",
         help="只检查本地配置与生成提示词是否一致",
+    )
+    action_group.add_argument(
+        "--print-integration-prompt",
+        metavar="PATH",
+        help="输出已代入知识库路径的父仓库集成提示词",
+    )
+    parser.add_argument(
+        "--prompt-kind",
+        choices=INTEGRATION_PROMPT_KINDS,
+        default="parent",
+        help="集成提示词类型：parent（默认）、user 或 both",
     )
     args = parser.parse_args(argv)
 
     root = Path(__file__).resolve().parent
     generator = PolicyGenerator(root)
+    if args.print_integration_prompt is not None:
+        try:
+            prompt = generator.render_integration_prompt(
+                args.print_integration_prompt, args.prompt_kind
+            )
+        except ConfigurationError as exc:
+            print(f"生成失败：{exc}", file=sys.stderr)
+            return 2
+        print(prompt, end="")
+        return 0
+    if args.prompt_kind != "parent":
+        parser.error("--prompt-kind 只能与 --print-integration-prompt 一起使用")
     if args.check:
         valid, message = generator.check()
         print(message)

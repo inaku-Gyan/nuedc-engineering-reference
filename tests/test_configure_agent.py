@@ -13,6 +13,7 @@ from configure_agent import (
     AgentConfiguration,
     ConfigurationError,
     PolicyGenerator,
+    main,
     run_interactive,
 )
 
@@ -175,6 +176,50 @@ class PolicyGeneratorTests(unittest.TestCase):
         config = AgentConfiguration("maintainer", True, False)
         raw = json.loads(generator.serialized_configuration(config))
         self.assertEqual(generator.parse_configuration(raw), config)
+
+    def test_parent_integration_prompt_substitutes_normalized_path(self) -> None:
+        generator = PolicyGenerator(REPO_ROOT)
+        prompt = generator.render_integration_prompt(
+            r"third_party\nuedc-reference\\", "parent"
+        )
+        self.assertIn("`third_party/nuedc-reference`", prompt)
+        self.assertNotIn("<NUEDC_REFERENCE_PATH>", prompt)
+        self.assertIn("catalog/README.md", prompt)
+
+    def test_user_integration_prompt_is_available_without_local_config(self) -> None:
+        generator = PolicyGenerator(REPO_ROOT)
+        prompt = generator.render_integration_prompt("vendor/reference", "user")
+        self.assertIn("本任务需要查阅", prompt)
+        self.assertIn("`vendor/reference`", prompt)
+
+    def test_both_integration_prompts_have_copyable_sections(self) -> None:
+        generator = PolicyGenerator(REPO_ROOT)
+        prompt = generator.render_integration_prompt("refs/nuedc", "both")
+        self.assertIn("# Parent AGENTS.md snippet", prompt)
+        self.assertIn("# One-off user prompt", prompt)
+
+    def test_integration_prompt_rejects_unsafe_path(self) -> None:
+        generator = PolicyGenerator(REPO_ROOT)
+        for path in ("", "refs/`injected`", "refs/\nother"):
+            with self.subTest(path=path):
+                with self.assertRaises(ConfigurationError):
+                    generator.render_integration_prompt(path)
+
+    def test_cli_prints_integration_prompt_without_writing(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            self.assertEqual(
+                main(
+                    [
+                        "--print-integration-prompt",
+                        "third_party/nuedc-reference",
+                        "--prompt-kind",
+                        "user",
+                    ]
+                ),
+                0,
+            )
+        self.assertIn("third_party/nuedc-reference", output.getvalue())
 
 
 if __name__ == "__main__":
