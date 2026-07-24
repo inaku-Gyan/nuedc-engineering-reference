@@ -1,0 +1,17 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*~
+
+# Local extraction/OCR scratch data
+.cache/
+.tmp/
+tmp/
+ocr-work/
+
+# Generated local previews
+*.preview.html
+*.preview.png
+

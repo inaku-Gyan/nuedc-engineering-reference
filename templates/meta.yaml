@@ -1,0 +1,39 @@
+# 删除不适用字段；日期使用 YYYY-MM-DD。
+schema_version: 1
+id: hw-category-vendor-model
+title: "对象的正式名称"
+kind: hardware
+category: category
+vendor: vendor
+models:
+  - model
+aliases:
+  - alias
+tags:
+  - tag
+languages:
+  - zh-CN
+status: active
+importance: normal
+summary_updated: YYYY-MM-DD
+
+sources:
+  - file: originals/example-datasheet-rev1.pdf
+    type: datasheet
+    title: "官方文档标题"
+    document_id: "文档编号"
+    revision: "Rev 1"
+    published: YYYY-MM-DD
+    obtained: YYYY-MM-DD
+    url: "https://official.example/document"
+    sha256: "待填写"
+    redistribution: unknown
+
+extraction:
+  policy: selective
+  covered:
+    - topic
+  not_covered:
+    - topic
+  last_reviewed: YYYY-MM-DD
+
