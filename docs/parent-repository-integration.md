@@ -37,32 +37,9 @@ python configure_agent.py --print-integration-prompt third_party/nuedc-engineeri
 
 ## 推荐：业务仓库 `AGENTS.md` 片段
 
-将下面内容复制到业务仓库根 `AGENTS.md`，并把
-`<NUEDC_REFERENCE_PATH>` 替换为实际相对路径，例如
-`third_party/nuedc-engineering-reference`：
+见 [`agent-policy\integration-parent.md`](../agent-policy/integration-parent.md)。
 
-```markdown
-## NUEDC engineering knowledge base
-
-An Agent-oriented NUEDC engineering reference repository is available at `<NUEDC_REFERENCE_PATH>`.
-It curates official manuals, datasheets, and other originals (usually PDFs) alongside
-selective extracts, concise summaries, metadata, indexes, and source links. Its purpose is to help
-Agents locate and verify reusable hardware and toolchain facts.
-
-Consult it only when the task involves NUEDC, electronic components, development boards,
-instruments, embedded toolchains, hardware design, measurement, or debugging:
-
-1. If `<NUEDC_REFERENCE_PATH>/KNOWLEDGE_AGENT.md` exists, read and follow it before using or
-   changing the knowledge base.
-2. If that file is missing, treat the knowledge base as read-only, start from
-   `<NUEDC_REFERENCE_PATH>/catalog/README.md`, and tell the user to run
-   `python <NUEDC_REFERENCE_PATH>/configure_agent.py` before any knowledge-base update.
-   next and open original PDFs only when exact verification is necessary.
-3. Keep project-specific decisions in this business repository. Put only reusable
-   engineering knowledge in the reference repository.
-
-Do not preload or scan the knowledge base for unrelated tasks.
-```
+将其中内容复制到业务仓库根 `AGENTS.md`，并把`<NUEDC_REFERENCE_PATH>` 替换为实际相对路径。
 
 这段提示只负责“发现和路由”。详细的读取、整理、联网和 Git 权限仍来自知识库内
 由 `configure_agent.py` 生成的本地 `KNOWLEDGE_AGENT.md`，因此不会把整套规则
@@ -70,14 +47,9 @@ Do not preload or scan the knowledge base for unrelated tasks.
 
 ## 单次用户提问示例
 
-不方便修改业务仓库 `AGENTS.md` 时，可以在具体问题中附上：
+见 [`agent-policy\integration-user.md`](../agent-policy/integration-user.md)。
 
-```text
-本任务需要查阅 NUEDC 工程知识库，路径为 `<NUEDC_REFERENCE_PATH>`。
-这是面向 Agent 的电赛工程资料库，不是业务代码仓库。它集中保存官方 manual、datasheet 等原件（通常为 PDF），以及按需摘录、简明总结、元数据、索引和资料链接，用于低上下文地定位并核验可复用的软硬件与工具链知识。
-请先读取该目录下的 `KNOWLEDGE_AGENT.md`；如果不存在，则只读使用 `catalog/README.md` 作为入口，不要修改知识库，并提醒我先运行该目录下的 `configure_agent.py`。
-查找资料时依次阅读目录、资料包 README/meta、相关摘录，只有需要精确核验时才打开原始 PDF。
-```
+不方便修改业务仓库 `AGENTS.md` 时，可以在具体问题中附上。
 
 ## Submodule 初始化
 
