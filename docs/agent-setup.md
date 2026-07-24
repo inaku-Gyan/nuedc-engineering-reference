@@ -21,6 +21,11 @@ python configure_agent.py
 
 这两个文件均被 Git 忽略，每个 checkout 或 Submodule 工作树需要单独生成。
 
+如果知识库位于业务仓库的子目录，业务仓库根目录启动的 Agent 不一定会自动发现
+这里生成的 `AGENTS.md`。请同时按
+[`parent-repository-integration.md`](parent-repository-integration.md) 在父仓库中
+声明知识库入口。
+
 ## 权限预设
 
 ### 只读

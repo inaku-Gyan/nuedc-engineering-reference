@@ -44,8 +44,12 @@ Git Submodule 引入时也更容易理解。
 
 业务仓库将本仓库作为 Submodule 引入后，应：
 
-- 将 `catalog/README.md` 暴露为 Agent 的知识库入口；
+- 在业务仓库根 `AGENTS.md` 或当前用户提示中声明知识库路径；
+- 仅在任务相关时读取知识库本地 `AGENTS.md`，再从 `catalog/README.md` 开始；
+- 本地 `AGENTS.md` 缺失时只读使用知识库，并提醒用户运行 `configure_agent.py`；
 - 只在确有需要时读取 `originals/`；
 - 在业务仓库记录项目专属决策，本仓库只沉淀可复用知识；
 - 通过资料包路径和文档版本引用知识，避免复制后失去来源关系。
 
+可复制的集成提示见
+[`parent-repository-integration.md`](parent-repository-integration.md)。

@@ -34,6 +34,16 @@ python configure_agent.py
 
 完整设置方法和四种权限预设见 [`docs/agent-setup.md`](docs/agent-setup.md)。
 
+## 作为业务仓库的子目录
+
+业务仓库从根目录启动 Agent 时，不应依赖 Agent 自动发现任意子目录或 Submodule
+内部的 `AGENTS.md`。建议在业务仓库根 `AGENTS.md` 中加入一个短的触发式入口：
+只有任务涉及电赛、器件、工具链或硬件调试时，才读取本知识库的本地指令并从
+`catalog/README.md` 开始。
+
+可直接复制的父仓库片段、单次用户提示词和 Submodule 初始化命令见
+[`docs/parent-repository-integration.md`](docs/parent-repository-integration.md)。
+
 ## 目录结构
 
 ```text
