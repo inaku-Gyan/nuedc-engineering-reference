@@ -40,8 +40,14 @@ library/hardware/<category>/<vendor>/<model>/
 
 - [飞特 FT6335M](../library/hardware/motor-control/feetech/ft6335m/README.md)：
   360°磁编码 PWM 舵机规格、电气参数与控制速查。
+- [MG370 12 V 约 1:34 GMR 版本](../library/hardware/motor-control/generic/mg370-gmr-12v-34/README.md)：
+  来源未明随货资料中的电机参数和六针线序；PPR 仍须实测。
 
 ### 电机驱动
 
 - [杭州中科微 AT8236](../library/hardware/motor-control/zhongkewei/at8236/README.md)：
   单通道有刷直流电机 H 桥驱动芯片，涵盖推荐/极限电流、PWM、限流和保护。
+- [亚博 YB-MTNO3-V1.0](../library/hardware/motor-control/yahboom/yb-mtno3-v1.0/README.md)：
+  双路 AT8236 成品板的接口、供电、控制协议和板级证据边界。
+- [NXP PCA9685](../library/hardware/motor-control/nxp/pca9685/README.md)：
+  16 路 12 位 I²C PWM 控制器的地址、预分频、Sleep/Wake 和 OE 安全关断。

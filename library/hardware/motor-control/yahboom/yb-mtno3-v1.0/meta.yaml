@@ -1,0 +1,69 @@
+schema_version: 1
+id: hw-motor-control-yahboom-yb-mtno3-v1-0
+title: "亚博 YB-MTNO3-V1.0 双路 AT8236 电机驱动模块"
+kind: hardware
+category: motor-control
+vendor: yahboom
+models:
+  - YB-MTNO3-V1.0
+aliases:
+  - 2-Channel Motor Driver Module
+  - 亚博双路电机驱动模块
+tags:
+  - brushed-dc-motor
+  - at8236
+  - dual-h-bridge
+  - encoder-interface
+languages:
+  - zh-CN
+  - en
+status: active
+importance: high
+summary_updated: 2026-07-27
+
+sources:
+  - file: originals/board-interface-photo.png
+    type: product-image
+    title: "YB-MTNO3-V1.0 实物接口标注"
+    document_id: unknown
+    revision: "V1.0 board marking"
+    published: unknown
+    obtained: 2026-07-27
+    url: unknown
+    sha256: "2865a71a73a9d3b6f9582c200d5cda1083b325b5a6952f5460503c2dc04b3924"
+    redistribution: unknown
+  - file: originals/pin-description.png
+    type: product-image
+    title: "双路 AT8236 模块引脚说明"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-07-27
+    url: unknown
+    sha256: "2266a31d5e76fe2d6b6e593c6498a1721c849b669985599fb046a159a9072cff"
+    redistribution: unknown
+  - file: originals/control-truth-table.png
+    type: product-image
+    title: "双路 AT8236 模块驱动协议表"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-07-27
+    url: unknown
+    sha256: "9ff47cb01999d65e7c049570fceab27513decba17a9987a2dfdece8b2cf43b52"
+    redistribution: unknown
+
+extraction:
+  policy: selective
+  covered:
+    - board-identification
+    - power-range
+    - control-interface
+    - motor-and-encoder-connectors
+    - chip-rating-boundary
+  not_covered:
+    - board-schematic
+    - bill-of-materials
+    - current-sense-implementation
+    - measured-thermal-performance
+  last_reviewed: 2026-07-27

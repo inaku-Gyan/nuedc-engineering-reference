@@ -35,6 +35,7 @@
 | 器件特性和系列差异 | 本文件 | 数据表第 1–2 页 |
 | 引脚与复用功能 | [中文数据表](originals/mspm0g350x-datasheet-zh-rev-c.pdf) | 第 4–23 页 |
 | GPIO 输入电压与 5 V 容限 | [GPIO 输入电压摘录](extracts/gpio-input-voltage.md) | 第 11、25、35、76 页 |
+| QEI 与 PWM 定时器资源 | [定时器 QEI/PWM 摘录](extracts/timer-qei-pwm-resources.md) | 英文数据表第 8.29 节、表 8-16 |
 | 电气与时序参数 | [中文数据表](originals/mspm0g350x-datasheet-zh-rev-c.pdf) | 第 28–81 页 |
 | 封装与订购信息 | [中文数据表](originals/mspm0g350x-datasheet-zh-rev-c.pdf) | 第 84 页起 |
 | 寄存器和模块行为 | 尚未归档的技术参考手册 | TI 产品页 |
@@ -45,13 +46,14 @@
 
 - MSPM0G350x 的定位和 MSPM0G3507 主要资源；
 - GPIO 输入电压、PA0/PA1 的 5 V 容限及编码器接口注意事项；
+- TIMG8 单路 QEI、TIMA0/TIMA1 与 TIMG7 的 PWM/影子寄存器资源；
 - 本地数据表的版本、文档编号和官方入口。
 
 尚未整理：
 
 - MSPM0 G 系列 80 MHz 技术参考手册；
 - MSPM0G350x 勘误表；
-- 具体封装的引脚速查和外设复用表；
+- 具体封装的完整引脚速查和外设复用表；
 - 其余电气参数以及电源、时钟、调试和启动模式的设计检查表。
 
 ## 使用注意

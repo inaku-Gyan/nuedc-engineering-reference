@@ -1,0 +1,65 @@
+schema_version: 1
+id: hw-motor-control-nxp-pca9685
+title: "NXP PCA9685 16 路 12 位 I2C PWM 控制器"
+kind: hardware
+category: motor-control
+vendor: nxp
+models:
+  - PCA9685
+aliases:
+  - PCA9685PW
+  - PCA9685BS
+tags:
+  - pwm
+  - i2c
+  - servo-controller
+  - output-enable
+languages:
+  - en
+  - zh-CN
+status: active
+importance: high
+summary_updated: 2026-07-27
+
+sources:
+  - file: originals/pca9685-datasheet-rev3.pdf
+    type: datasheet
+    title: "PCA9685 16-channel, 12-bit PWM Fm+ I2C-bus LED controller"
+    document_id: PCA9685
+    revision: "Rev. 3"
+    published: 2010-09-02
+    obtained: 2026-07-27
+    url: "unknown; current official revision: https://www.nxp.com/docs/en/data-sheet/PCA9685.pdf"
+    sha256: "e446c680be9a9c45b2f2f561b75a1f135d335048da08d6856873c0e676b8d890"
+    redistribution: unknown
+    notes:
+      - "用户放入 inbox，PDF 元数据和正文确认作者为 NXP、版本为 Rev.3。"
+      - "当前控制文档是 Rev.4；旧版频率范围 40–1000 Hz 已被 24–1526 Hz 取代。"
+  - file: originals/generic-16-channel-servo-module-schematic.pdf
+    type: schematic
+    title: "通用 PCA9685 16 路 PWM 模块原理图"
+    document_id: unknown
+    revision: unknown
+    published: 2015-03-03
+    obtained: 2026-07-27
+    url: unknown
+    sha256: "3ff653b1e81b3cf2fd5a6fc0fb810d57d02a7053c330c06792aed1c618234dc0"
+    redistribution: unknown
+    notes:
+      - "Altium PDF 元数据显示 2015-03-03；无法确认模块厂商、板号或公开来源。"
+
+extraction:
+  policy: selective
+  covered:
+    - logic-electrical-limits
+    - i2c-addressing
+    - register-map
+    - prescale
+    - sleep-wake-sequence
+    - output-enable
+    - revision-differences
+  not_covered:
+    - module-power-path-ratings
+    - external-clock
+    - measured-oscillator-error
+  last_reviewed: 2026-07-27
