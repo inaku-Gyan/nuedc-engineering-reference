@@ -48,20 +48,12 @@
 
 ## PPR 仍然未知
 
-两张资料图都没有给出 PPR，也没有说明计数位于电机轴还是输出轴。其他 MG370、
-MG513 或同外形电机的 500 PPR 等数值不能移植到本版本。
-
-软件配置应要求显式填写“每输出轴一圈计数”，且该值已经包含：
-
-- 实际减速比；
-- A/B 每相周期定义；
-- 1×、2×或 4×解码方式。
-
-建议在低速手转下先确认 A/B 相位和方向，再让输出轴转过多圈统计平均计数。
+根据编码器参数图，GMR 编码器为 500 ppr.
 
 ## 资料入口
 
 - [电机参数图](originals/motor-parameters.jpg)
+- [编码器参数图](originals/编码器参数.webp)
 - [六针线序图](originals/six-pin-wiring.jpg)
 - [MG370 与 AT8236 搭配指南](../../../../../knowledge/design-guides/mg370-gmr-at8236-compatibility.md)
 
