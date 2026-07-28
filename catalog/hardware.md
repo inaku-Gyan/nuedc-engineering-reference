@@ -50,4 +50,4 @@ library/hardware/<category>/<vendor>/<model>/
 - [亚博 YB-MTNO3-V1.0](../library/hardware/motor-control/yahboom/yb-mtno3-v1.0/README.md)：
   双路 AT8236 成品板的接口、供电、控制协议和板级证据边界。
 - [NXP PCA9685](../library/hardware/motor-control/nxp/pca9685/README.md)：
-  16 路 12 位 I²C PWM 控制器的地址、预分频、Sleep/Wake 和 OE 安全关断。
+  16 路 12 位 I²C PWM 控制器的 7/8 位地址、预分频、Sleep/Wake 和 OE 安全关断。

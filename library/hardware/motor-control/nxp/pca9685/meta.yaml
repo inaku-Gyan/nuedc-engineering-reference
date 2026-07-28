@@ -19,7 +19,7 @@ languages:
   - zh-CN
 status: active
 importance: high
-summary_updated: 2026-07-27
+summary_updated: 2026-07-28
 
 sources:
   - file: originals/pca9685-datasheet-rev3.pdf
@@ -62,4 +62,4 @@ extraction:
     - module-power-path-ratings
     - external-clock
     - measured-oscillator-error
-  last_reviewed: 2026-07-27
+  last_reviewed: 2026-07-28
