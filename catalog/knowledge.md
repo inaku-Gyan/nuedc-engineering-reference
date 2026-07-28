@@ -19,5 +19,7 @@
 
 ### 电机与驱动
 
+- [驱动轮电机参数清单与换算](../knowledge/design-guides/drive-wheel-motor-parameter-checklist.md)：
+  按上电、选型、闭环和实车调试阶段整理电机、减速箱、车轮、编码器及驱动器参数。
 - [MG370（GMR）与 AT8236 搭配指南](../knowledge/design-guides/mg370-gmr-at8236-compatibility.md)：
   核对电压、电流、堵转边界、编码器电平、接插件线序和 MSPM0G3507 接口。
