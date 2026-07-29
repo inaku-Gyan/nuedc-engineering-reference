@@ -43,6 +43,8 @@ library/hardware/<category>/<vendor>/<model>/
 
 ### 电机与执行器
 
+- [DJI RoboMaster GM6020](../library/hardware/motor-control/dji/gm6020/README.md)：
+  24 V 内置 FOC 驱动云台电机，涵盖额定参数、CAN/PWM 协议、拨码 ID 和反馈帧。
 - [飞特 FT6335M](../library/hardware/motor-control/feetech/ft6335m/README.md)：
   360°磁编码 PWM 舵机规格、电气参数与控制速查。
 - [MG370 12 V 约 1:34 GMR 版本](../library/hardware/motor-control/generic/mg370-gmr-12v-34/README.md)：

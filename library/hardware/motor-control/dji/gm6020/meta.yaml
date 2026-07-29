@@ -1,0 +1,52 @@
+schema_version: 1
+id: hw-motor-control-dji-gm6020
+title: "DJI RoboMaster GM6020 直流无刷电机"
+kind: hardware
+category: motor-control
+vendor: dji
+models:
+  - GM6020
+aliases:
+  - RoboMaster GM6020
+  - GM6020 云台电机
+  - GM6020 直流无刷电机
+tags:
+  - brushless-dc-motor
+  - integrated-driver
+  - foc
+  - can
+  - pwm
+  - gimbal
+languages:
+  - zh-CN
+status: active
+importance: high
+summary_updated: 2026-07-29
+
+sources:
+  - file: originals/robomaster-gm6020-user-manual-v1.4-zh-cn.pdf
+    type: user-manual
+    title: "RoboMaster GM6020 直流无刷电机使用说明"
+    document_id: unknown
+    revision: "v1.4"
+    published: 2023-10-13
+    obtained: 2026-07-29
+    url: "https://www.robomaster.com/zh-CN/products/components/general/gm6020/info"
+    sha256: "8843f783a3a476dc0eb20347995a604e156a6b00d4e41551e0aba0d7e02262a9"
+    redistribution: restricted
+
+extraction:
+  policy: selective
+  covered:
+    - electrical-and-mechanical-characteristics
+    - connector-pinout
+    - can-control-and-feedback
+    - pwm-control
+    - dip-switch-and-termination
+    - indicator-and-protection
+  not_covered:
+    - assistant-software-package
+    - firmware-version-differences
+    - digitized-load-curves
+    - measured-thermal-performance
+  last_reviewed: 2026-07-29
