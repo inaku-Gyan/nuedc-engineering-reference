@@ -55,6 +55,7 @@ extraction:
     - i2c-addressing
     - register-map
     - prescale
+    - datasheet-pwm-error-limits
     - sleep-wake-sequence
     - output-enable
     - revision-differences
@@ -62,4 +63,4 @@ extraction:
     - module-power-path-ratings
     - external-clock
     - measured-oscillator-error
-  last_reviewed: 2026-07-28
+  last_reviewed: 2026-07-29
