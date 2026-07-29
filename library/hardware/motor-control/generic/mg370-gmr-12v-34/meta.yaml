@@ -18,7 +18,7 @@ languages:
   - zh-CN
 status: provisional
 importance: high
-summary_updated: 2026-07-27
+summary_updated: 2026-07-29
 
 sources:
   - file: originals/motor-parameters.jpg
@@ -41,16 +41,30 @@ sources:
     url: unknown
     sha256: "558ae77e2ed36739e24307946ac57a87cf43037cd4cf000c8eee9d466b2c2dac"
     redistribution: unknown
+  - file: originals/编码器参数.webp
+    type: product-specification-image
+    title: "GMR 与霍尔编码器参数对比"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-07-29
+    url: unknown
+    sha256: "a3ff514fe1c974fc2a8ec2924c74d6c8d9856e92058a05c2b0d0e375c1b4e8be"
+    redistribution: unknown
+    notes:
+      - "图片给出 GMR 编码器 500 PPR、3.3–5 V、输出上拉至 VCC；未定义 PPR 口径或安装轴位置。"
 
 extraction:
   policy: selective
   covered:
     - version-limited-motor-parameters
     - connector-pinout
+    - provisional-encoder-ppr
+    - provisional-encoder-supply-and-output
     - evidence-limitations
   not_covered:
-    - encoder-ppr
-    - encoder-electrical-interface
+    - encoder-ppr-definition-and-shaft-location
+    - measured-encoder-output-level-and-frequency
     - manufacturer-identification
     - measured-performance
-  last_reviewed: 2026-07-27
+  last_reviewed: 2026-07-29

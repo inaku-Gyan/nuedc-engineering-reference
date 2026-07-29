@@ -42,6 +42,36 @@
 | IST8310 | I2C3；PG6、PG3 | 默认 I2C 地址 0x0E |
 | DCMI 摄像头 | PB8/PB9、PA6、PH8/PH9 等 | 18-pin FPC，8 位数据总线 |
 
+### 数字摄像头 FPC 线序
+
+用户手册 PDF 第 14 页给出的 J33（Molex 503480-1800）线序如下。连接器还提供
+两个 3.3 V 和三个 GND 引脚。
+
+| FPC pin | 板级信号 | STM32 IO | 可用定时器复用 |
+| ---: | --- | --- | --- |
+| 1 | PCLK_OUT | PA6 | TIM13_CH1 |
+| 2 | GND | — | — |
+| 3 | I2C1_SCL | PB8 | TIM10_CH1；板上 2.2 kΩ 上拉 |
+| 4 | I2C1_SDA | PB9 | TIM11_CH1；板上 2.2 kΩ 上拉 |
+| 5 | DCMI_HREF | PH8 | — |
+| 6 | DCMI_VSYNC | PI5 | TIM8_CH1 |
+| 7 | GND | — | — |
+| 8 | DCMI_D0 | PH9 | TIM12_CH2 |
+| 9 | DCMI_D1 | PC7 | TIM3_CH2 / TIM8_CH2 |
+| 10 | DCMI_D2 | PE0 | — |
+| 11 | DCMI_D3 | PE1 | — |
+| 12 | DCMI_D4 | PE4 | — |
+| 13 | DCMI_D5 | PI4 | TIM8_BKIN |
+| 14 | DCMI_D6 | PE5 | TIM9_CH1 |
+| 15 | DCMI_D7 | PE6 | TIM9_CH2 |
+| 16 | GND | — | — |
+| 17 | 3.3 V | — | — |
+| 18 | 3.3 V | — | — |
+
+“可用定时器复用”来自 STM32F405/407 DS8626 Rev 12 Table 9，不是用户手册
+给出的摄像头功能。把 FPC 当作通用 IO 使用时必须采用匹配的 0.5 mm 间距转接板，
+并放弃同一时刻使用 DCMI 摄像头；不能把 3.3 V 引脚当作大电流外设电源。
+
 ## 易错点
 
 - 外壳丝印 `UART1` 对应 STM32 的 UART6，外壳丝印 `UART2` 对应 STM32 的
@@ -50,6 +80,8 @@
 - 可配置 I2C/SPI 接口默认电源由 R209/R210 的焊接状态决定。切换到 5 V 设备
   需要改焊，修改前先核对实板电阻状态。
 - CAN1 线序为 CANL、CANH；CAN2 线序为 5 V、GND、CANH、CANL。
+- 摄像头 FPC 的 Pin 1 是 PCLK_OUT，Pin 17/18 才是 3.3 V；方向按用户手册
+  接口外形图核对，禁止只按排线端肉眼猜测。
 - 电池检测的理想分压系数为 `22 / (200 + 22) ≈ 0.0991`。这是按原理图阻值
   推导的标称值，换算实际电压时还需考虑 ADC 参考电压和电阻误差。
 

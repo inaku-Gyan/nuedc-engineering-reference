@@ -72,6 +72,8 @@ extraction:
     - key-capabilities
     - document-routing
     - robomaster-c-board-mcu-linkage
+    - timer-encoder-and-pwm-capabilities
+    - c-board-relevant-timer-pin-mapping
     - errata-applicability
   not_covered:
     - complete-pin-multiplexing
