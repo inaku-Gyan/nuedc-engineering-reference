@@ -44,8 +44,8 @@ library/hardware/<category>/<vendor>/<model>/
 ### 显示模块
 
 - [金逸晨 GME12864-49～54](../library/hardware/display/goldenmorning/gme12864-49-54/README.md)：
-  0.96 英寸 128 × 64 SSD1315 四针 I²C OLED，涵盖接口、地址推导、供电边界和
-  随附 SPI 示例的不适用性。
+  0.96 英寸 128 × 64 SSD1315 四针 I²C OLED，涵盖接口、地址、供电边界、
+  GDDRAM、初始化基线和随附 SPI 示例的不适用性。
 
 ### 传感器模块
 

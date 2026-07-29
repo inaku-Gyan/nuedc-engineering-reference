@@ -99,10 +99,14 @@ extraction:
     - derived-i2c-address
     - schematic-power-path
     - i2c-pullup-voltage
+    - i2c-control-byte
+    - gddram-page-layout
+    - charge-pump-power-sequence
+    - module-example-initialization-baseline
     - spi-example-interface-mismatch
   not_covered:
     - complete-command-reference
-    - validated-initialization-sequence
+    - hardware-validated-initialization-sequence
     - model-suffix-color-mapping
     - optical-characteristics
     - reliability-tests
