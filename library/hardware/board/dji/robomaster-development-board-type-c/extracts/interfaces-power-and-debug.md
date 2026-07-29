@@ -30,8 +30,8 @@
 | 可配置 SPI | PB12–PB15 | SPI2_CS / SCK / MISO / MOSI |
 | UART 4-pin | PA9 / PB7 | STM32 UART1_TX / UART1_RX |
 | UART 3-pin | PG14 / PG9 | STM32 UART6_TX / UART6_RX |
-| CAN1 | PD1 / PD0 | CAN1_TX / CAN1_RX；2-pin 接口 |
-| CAN2 | PB6 / PB5 | CAN2_TX / CAN2_RX；4-pin 接口带 5 V、GND |
+| CAN1 | PD1 / PD0 | 经 TJA1044 收发器接 2-pin CANL/CANH，不是 MCU GPIO 引出 |
+| CAN2 | PB6 / PB5 | 经 TJA1044 收发器接 4-pin 5 V/GND/CANH/CANL，不是 MCU GPIO 引出 |
 | PWM 1–4 | PE9 / PE11 / PE13 / PE14 | TIM1_CH1–CH4 |
 | PWM 5–7 | PC6 / PI6 / PI7 | TIM8_CH1–CH3 |
 | DBUS | PC11 | 经反相电路接 UART3_RX，通常配置 100 kbit/s |
@@ -80,6 +80,11 @@
 - 可配置 I2C/SPI 接口默认电源由 R209/R210 的焊接状态决定。切换到 5 V 设备
   需要改焊，修改前先核对实板电阻状态。
 - CAN1 线序为 CANL、CANH；CAN2 线序为 5 V、GND、CANH、CANL。
+- CAN1、CAN2 的 MCU TX/RX 都只连接到板载 TJA1044 收发器，外部连接器不能
+  改作对应 MCU 引脚的 GPIO、PWM 或编码器输入。
+- 原理图中 CAN1 的 R91、CAN2 的 R102 均为固定 120 Ω 跨接在 CANH/CANL
+  之间。两块 C 板点对点连接时两端合计得到约 60 Ω 总线负载，不应再并联额外
+  终端电阻；扩展更多节点时，两块 C 板应位于总线物理两端。
 - 摄像头 FPC 的 Pin 1 是 PCLK_OUT，Pin 17/18 才是 3.3 V；方向按用户手册
   接口外形图核对，禁止只按排线端肉眼猜测。
 - 电池检测的理想分压系数为 `22 / (200 + 22) ≈ 0.0991`。这是按原理图阻值
