@@ -41,25 +41,23 @@ DS8626 第 3.21.2 节明确指出 TIM2–TIM5 能处理正交增量编码器；T
 编码器边沿而不是内部固定时钟。因此 CH3/CH4 的输出比较只能跟随编码器位置，
 不能当作与转速无关的固定载波 PWM。
 
-## C 板外露引脚中常用的复用
+## C 板常规外部接口中的定时器复用
 
-以下只是 DS8626 Table 9 的芯片复用；引脚是否外露及连接器线序还必须核对
-C 板原理图/用户手册。
+下表只计入 PWM、CAN、UART 和可配置 I/O 等常规连接器。数字摄像头使用专用
+18-pin FPC，不是常规针脚；在没有专门转接 PCB 时不能纳入可用 IO 预算。
 
-| 定时器 | CH1 候选 | CH2 候选 | 备注 |
+| 定时器 | CH1 候选 | CH2 候选 | 常规板级接口 |
 | --- | --- | --- | --- |
 | TIM1 | PE9 | PE11 | C 板 PWM1/PWM2 |
-| TIM3 | PC6 | PC7 | C 板 PWM5/DCMI_D1 |
+| TIM3 | PC6 | PB5 | C 板 PWM5/CAN2_RX |
 | TIM4 | PB6 | PB7 | C 板 CAN2_TX/UART1_RX |
-| TIM8 | PI5 | PI6 | C 板 DCMI_VSYNC/PWM6 |
-| TIM9 | PE5 | PE6 | C 板 DCMI_D6/DCMI_D7，仅 PWM |
-| TIM10 | PB8 | — | C 板摄像头 I2C1_SCL，仅单通道 |
-| TIM11 | PB9 | — | C 板摄像头 I2C1_SDA，仅单通道 |
+| TIM8 | PC6 | PI6 | C 板 PWM5/PWM6 |
 | TIM12 | PB14 | PB15 | C 板 SPI2_MISO/SPI2_MOSI，仅 PWM |
-| TIM13 | PA6 | — | C 板摄像头 PCLK，仅单通道 |
 
-PB8/PB9 在 C 板上各有 2.2 kΩ 上拉到 3.3 V；将其改作推挽 PWM 前要把这个
-板级负载计入，并确认不会同时连接摄像头或其他 I2C 设备。
+TIM3_CH1 和 TIM8_CH1 都只能使用常规接口上的 PC6，所以 TIM3 与 TIM8 不能
+同时组成两组完整编码器输入。加上 TIM1、TIM4，C 板常规外部接口最多得到三组
+互不冲突的硬件编码器输入；第四组需要外部 QEI 计数器、从控 MCU 或经过带宽评估
+的软件解码。
 
 ## 来源
 

@@ -47,30 +47,30 @@
 用户手册 PDF 第 14 页给出的 J33（Molex 503480-1800）线序如下。连接器还提供
 两个 3.3 V 和三个 GND 引脚。
 
-| FPC pin | 板级信号 | STM32 IO | 可用定时器复用 |
-| ---: | --- | --- | --- |
-| 1 | PCLK_OUT | PA6 | TIM13_CH1 |
-| 2 | GND | — | — |
-| 3 | I2C1_SCL | PB8 | TIM10_CH1；板上 2.2 kΩ 上拉 |
-| 4 | I2C1_SDA | PB9 | TIM11_CH1；板上 2.2 kΩ 上拉 |
-| 5 | DCMI_HREF | PH8 | — |
-| 6 | DCMI_VSYNC | PI5 | TIM8_CH1 |
-| 7 | GND | — | — |
-| 8 | DCMI_D0 | PH9 | TIM12_CH2 |
-| 9 | DCMI_D1 | PC7 | TIM3_CH2 / TIM8_CH2 |
-| 10 | DCMI_D2 | PE0 | — |
-| 11 | DCMI_D3 | PE1 | — |
-| 12 | DCMI_D4 | PE4 | — |
-| 13 | DCMI_D5 | PI4 | TIM8_BKIN |
-| 14 | DCMI_D6 | PE5 | TIM9_CH1 |
-| 15 | DCMI_D7 | PE6 | TIM9_CH2 |
-| 16 | GND | — | — |
-| 17 | 3.3 V | — | — |
-| 18 | 3.3 V | — | — |
+| FPC pin | 板级信号 | STM32 IO |
+| ---: | --- | --- |
+| 1 | PCLK_OUT | PA6 |
+| 2 | GND | — |
+| 3 | I2C1_SCL | PB8；板上 2.2 kΩ 上拉 |
+| 4 | I2C1_SDA | PB9；板上 2.2 kΩ 上拉 |
+| 5 | DCMI_HREF | PH8 |
+| 6 | DCMI_VSYNC | PI5 |
+| 7 | GND | — |
+| 8 | DCMI_D0 | PH9 |
+| 9 | DCMI_D1 | PC7 |
+| 10 | DCMI_D2 | PE0 |
+| 11 | DCMI_D3 | PE1 |
+| 12 | DCMI_D4 | PE4 |
+| 13 | DCMI_D5 | PI4 |
+| 14 | DCMI_D6 | PE5 |
+| 15 | DCMI_D7 | PE6 |
+| 16 | GND | — |
+| 17 | 3.3 V | — |
+| 18 | 3.3 V | — |
 
-“可用定时器复用”来自 STM32F405/407 DS8626 Rev 12 Table 9，不是用户手册
-给出的摄像头功能。把 FPC 当作通用 IO 使用时必须采用匹配的 0.5 mm 间距转接板，
-并放弃同一时刻使用 DCMI 摄像头；不能把 3.3 V 引脚当作大电流外设电源。
+该接口是面向摄像头模组的 0.5 mm 间距 FPC，不是常规排针、牛角座或舵机接口。
+在没有专门设计并验证的 FPC 转接 PCB 时，不能把这些 MCU 信号计入可直接使用的
+外部 IO 资源，也不能把 3.3 V 引脚当作大电流外设电源。
 
 ## 易错点
 
