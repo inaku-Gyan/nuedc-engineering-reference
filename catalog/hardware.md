@@ -28,11 +28,16 @@ library/hardware/<category>/<vendor>/<model>/
 
 ### MCU
 
+- [ST STM32F405/407](../library/hardware/mcu/st/stm32f405-407/README.md)：
+  168 MHz Cortex-M4F MCU 的 DS8626 Rev 12、RM0090 Rev 22 和 ES0182 Rev 19；
+  包含 RoboMaster C 板所用 STM32F407IGH6TR 的资料入口。
 - [TI MSPM0G3507](../library/hardware/mcu/ti/mspm0g3507/README.md)：
   MSPM0G350x 中文数据表 Rev. C，涵盖器件特性、引脚和电气参数。
 
 ### 开发板
 
+- [DJI RoboMaster 开发板 C 型](../library/hardware/board/dji/robomaster-development-board-type-c/README.md)：
+  STM32F407IGH6TR 控制板的 V1.0 原理图、供电、下载方式和接口 IO 速查。
 - [立创·天猛星 MSPM0G3507](../library/hardware/board/lckfb/tmx-mspm0g3507/README.md)：
   板卡规格书、引脚复用图和三页原理图。
 

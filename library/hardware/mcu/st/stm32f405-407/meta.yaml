@@ -1,0 +1,81 @@
+schema_version: 1
+id: hw-mcu-st-stm32f405-407
+title: "ST STM32F405/407 微控制器"
+kind: hardware
+category: mcu
+vendor: stmicroelectronics
+models:
+  - STM32F405xx
+  - STM32F407xx
+aliases:
+  - STM32F405
+  - STM32F407
+  - STM32F407IG
+  - STM32F407IGH6TR
+  - DS8626
+  - RM0090
+  - ES0182
+tags:
+  - arm-cortex-m4
+  - fpu
+  - stm32f4
+  - can
+  - motor-control
+languages:
+  - en
+status: active
+importance: high
+summary_updated: 2026-07-29
+
+sources:
+  - file: originals/stm32f405-407-datasheet-ds8626-rev12.pdf
+    type: datasheet
+    title: "STM32F405xx STM32F407xx datasheet"
+    document_id: DS8626
+    revision: "Rev 12"
+    published: "2026-03"
+    obtained: 2026-07-29
+    url: "https://www.st.com/resource/en/datasheet/stm32f407ie.pdf"
+    sha256: "1f41b4fa49a9960215ebb76cd0a75f20241db82eed60d308345a80463caeed22"
+    redistribution: unknown
+    notes:
+      - "PDF 元数据 Classification 为 Public，Document_Type 为 Datasheet。"
+  - file: originals/stm32f405-407-errata-es0182-rev19.pdf
+    type: errata
+    title: "STM32F405/407xx and STM32F415/417xx device errata"
+    document_id: ES0182
+    revision: "Rev 19"
+    published: "2026-07"
+    obtained: 2026-07-29
+    url: "https://www.st.com/resource/en/errata_sheet/es0182-stm32f405407xx-and-stm32f415417xx-device-errata-stmicroelectronics.pdf"
+    sha256: "1d3da0f99b85013548d17df07919516bf862f8f38cbd1a61f08e75abb8e4c54f"
+    redistribution: unknown
+    notes:
+      - "PDF 元数据 Classification 为 Public，Document_Type 为 Errata sheet。"
+  - file: originals/stm32f4-reference-manual-rm0090-rev22.pdf
+    type: reference-manual
+    title: "STM32F405/415, STM32F407/417, STM32F427/437 and STM32F429/439 reference manual"
+    document_id: RM0090
+    revision: "Rev 22"
+    published: "2026-05"
+    obtained: 2026-07-29
+    url: "https://www.st.com/resource/en/reference_manual/rm0090-stm32f405415-stm32f407417-stm32f427437-and-stm32f429439-advanced-armbased-32bit-mcus-stmicroelectronics.pdf"
+    sha256: "f3ff2322eec21f4e49081f68481b764506eee81dba6031bc767e2f8955b27cca"
+    redistribution: unknown
+    notes:
+      - "PDF 元数据 Classification 为 Public，Document_Type 为 Reference manual。"
+
+extraction:
+  policy: selective
+  covered:
+    - device-positioning
+    - key-capabilities
+    - document-routing
+    - robomaster-c-board-mcu-linkage
+    - errata-applicability
+  not_covered:
+    - complete-pin-multiplexing
+    - electrical-design-checklist
+    - peripheral-register-details
+    - exhaustive-errata-index
+  last_reviewed: 2026-07-29

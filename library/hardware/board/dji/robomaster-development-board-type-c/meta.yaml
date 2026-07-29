@@ -1,0 +1,72 @@
+schema_version: 1
+id: hw-board-dji-robomaster-development-board-type-c
+title: "DJI RoboMaster 开发板 C 型"
+kind: hardware
+category: board
+vendor: dji
+models:
+  - RoboMaster Development Board Type C
+aliases:
+  - RoboMaster 开发板 C 型
+  - RoboMaster C 型开发板
+  - RoboMaster C 板
+  - C 板
+tags:
+  - stm32f407
+  - robomaster
+  - development-board
+  - robot-control
+  - nuedc
+languages:
+  - zh-CN
+  - en
+status: active
+importance: high
+summary_updated: 2026-07-29
+
+sources:
+  - file: originals/robomaster-development-board-type-c-schematic-v1.0.pdf
+    type: schematic
+    title: "RoboMaster 开发板 C 型原理图"
+    document_id: unknown
+    revision: "V1.0"
+    published: 2019-12-05
+    obtained: 2026-07-29
+    url: "https://www.robomaster.com/zh-CN/products/components/general/development-board-type-c"
+    sha256: "ea964d525c755057c5b59e244d8b68c5835f69ab0fa90d7bcf33dba2c171f6e6"
+    redistribution: unknown
+    notes:
+      - "PDF 共 7 页，标题栏为 Sheet 2–8，未包含 Sheet 1。"
+      - "PDF 元数据创建/修改时间为 2019-12-09，原理图标题栏日期为 2019-12-05。"
+      - "官方产品页当前未显示可下载文档；URL 记录产品官方入口。"
+  - type: user-manual
+    title: "RoboMaster 开发板 C 型用户手册"
+    document_id: unknown
+    revision: "v1.0"
+    published: "2020-01"
+    obtained: 2026-07-29
+    url: "https://www.robomaster.com/zh-CN/products/components/general/development-board-type-c"
+    sha256: "226922f12d5f1f78c6a2627a0ffed2410f28278a9c2cbeb07fbdd9003f94a177"
+    redistribution: restricted
+    archived: false
+    notes:
+      - "正文第 2 页明确写有未经许可不得复制翻印，按仓库策略不归档原件。"
+      - "收到的文件名带 unlocked，PDF Producer 为 iLovePDF，非可验证的原始发布文件。"
+      - "文件保留在 inbox 中，未纳入本次提交；如需删除或移出工作区应由用户决定。"
+      - "官方产品页当前未显示可下载文档；URL 记录产品官方入口。"
+
+extraction:
+  policy: selective
+  covered:
+    - board-positioning
+    - power-tree-and-input-protection
+    - interface-to-gpio-mapping
+    - swd-and-dfu
+    - onboard-sensors
+    - source-licensing-boundary
+  not_covered:
+    - complete-bill-of-materials
+    - pcb-layout
+    - hardware-revision-differences
+    - software-examples
+  last_reviewed: 2026-07-29
