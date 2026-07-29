@@ -7,7 +7,7 @@
 - 对象：RoboMaster 开发板 C 型
 - 主控：`STM32F407IGH6TR`
 - 原理图：V1.0，2019-12-05
-- 用户手册：v1.0，2020-01；因许可限制未归档原件
+- 用户手册：v1.0，2020-01
 
 ## 供电与下载
 
@@ -58,7 +58,8 @@
 - 文件：`../originals/robomaster-development-board-type-c-schematic-v1.0.pdf`
 - 文档版本：V1.0
 - 章节/页码：PDF 第 1–7 页，原理图 Sheet 2–8
-- 辅助核验：用户手册 v1.0，PDF 第 5–20 页；原件因许可限制未归档
+- 辅助核验：`../originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn-unlocked.pdf`，
+  v1.0，PDF 第 5–20 页
 - 官方产品页：<https://www.robomaster.com/zh-CN/products/components/general/development-board-type-c>
 - 提取日期：2026-07-29
 - 提取方式：文本层提取后人工核对

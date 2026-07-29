@@ -32,6 +32,7 @@
 | 需求 | 推荐入口 | 来源定位 |
 | --- | --- | --- |
 | 接口、IO 和供电速查 | [板级接口与供电摘录](extracts/interfaces-power-and-debug.md) | 原理图 Sheet 2–8 |
+| 接口线序、功能说明和参数表 | [v1.0 用户手册](originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn-unlocked.pdf) | PDF 第 3–20 页 |
 | 完整连接与元件参数 | [V1.0 原理图](originals/robomaster-development-board-type-c-schematic-v1.0.pdf) | PDF 第 1–7 页，对应 Sheet 2–8 |
 | MCU 特性、电气参数和引脚 | [ST STM32F405/407](../../../mcu/st/stm32f405-407/README.md) | DS8626 Rev 12 |
 | 外设寄存器和工作方式 | [ST STM32F405/407](../../../mcu/st/stm32f405-407/README.md) | RM0090 Rev 22 |
@@ -59,8 +60,6 @@
 - 丝印 `UART1`、`UART2` 与 STM32 外设编号不一致；见接口摘录。
 - USB 供电不连接舵机使用的 `VCC_5V_M`，不能由 USB 给 7 路 PWM 接口供电。
 - 可配置 I2C/SPI 接口的 5 V/3.3 V 选择需要改焊 0 Ω 电阻，不能只靠软件切换。
-- 本地收到的用户手册是经第三方工具解除限制的副本，且正文明确禁止未经许可
-  复制翻印，因此未归档为可再分发原件；记录见 `meta.yaml`。
 
 ## 官方入口
 
