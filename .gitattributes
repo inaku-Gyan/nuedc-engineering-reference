@@ -7,10 +7,12 @@
 *.hex filter=lfs diff=lfs merge=lfs -text
 *.elf filter=lfs diff=lfs merge=lfs -text
 
+# Preserve byte-exact source examples archived as originals.
+library/**/originals/*.c -text -diff
+
 # Keep textual knowledge portable across platforms.
 *.md text eol=lf
 *.yaml text eol=lf
 *.yml text eol=lf
 *.json text eol=lf
 *.jsonl text eol=lf
-

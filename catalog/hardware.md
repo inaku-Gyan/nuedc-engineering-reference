@@ -41,6 +41,18 @@ library/hardware/<category>/<vendor>/<model>/
 - [立创·天猛星 MSPM0G3507](../library/hardware/board/lckfb/tmx-mspm0g3507/README.md)：
   板卡规格书、引脚复用图和三页原理图。
 
+### 显示模块
+
+- [金逸晨 GME12864-49～54](../library/hardware/display/goldenmorning/gme12864-49-54/README.md)：
+  0.96 英寸 128 × 64 SSD1315 四针 I²C OLED，涵盖接口、地址推导、供电边界和
+  随附 SPI 示例的不适用性。
+
+### 传感器模块
+
+- [WHEELTEC LF04](../library/hardware/sensor/wheeltec/lf04/README.md)：
+  四路 940 nm 反射式巡线模块，涵盖通道/针位、比较器有效电平、阈值调节和
+  3.3 V MCU 接口风险。
+
 ### 电机与执行器
 
 - [DJI RoboMaster GM6020](../library/hardware/motor-control/dji/gm6020/README.md)：

@@ -1,0 +1,108 @@
+schema_version: 1
+id: hw-display-goldenmorning-gme12864-49-54
+title: "金逸晨 GME12864-49～54 0.96 英寸 SSD1315 I²C OLED 模组"
+kind: hardware
+category: display
+vendor: goldenmorning
+models:
+  - GME12864-49
+  - GME12864-50
+  - GME12864-51
+  - GME12864-52
+  - GME12864-53
+  - GME12864-54
+aliases:
+  - GME12864
+  - 金逸晨 0.96 OLED
+  - SSD1315 0.96 OLED
+tags:
+  - oled
+  - passive-matrix-oled
+  - 128x64
+  - ssd1315
+  - i2c
+languages:
+  - zh-CN
+  - en
+status: active
+importance: high
+summary_updated: 2026-07-29
+
+sources:
+  - file: originals/gme12864-49-54-module-spec-v1.0.pdf
+    type: module-specification
+    title: "GME12864-49/50/51/52/53/54 OLED 模组规格书"
+    document_id: GME12864-49/50/51/52/53/54
+    revision: "V1.0"
+    published: 2020-04-22
+    obtained: 2026-07-29
+    url: "https://goldenmorninglcd.com/oled-display-module/"
+    sha256: "22c55df5bd7c5d50c43fd860df8daa55f90c413303d09b32ee15bf7b659b2ad7"
+    redistribution: unknown
+    notes:
+      - "URL 是厂商当前产品族页面，不是本地文件的已确认下载来源。"
+      - "版本表日期为 2020-04-22；外形图另标 2020-07-23 修改胶厚。"
+  - file: originals/gme12864-4pin-i2c-schematic.pdf
+    type: schematic
+    title: "0.96 英寸四针 SSD1315 I²C 转接板原理图"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-07-29
+    url: unknown
+    sha256: "9ab1f0144ec8136fd7a6e0e9ecf140702c042130711a62cf8ab4df5790cf32fc"
+    redistribution: unknown
+  - file: originals/ssd1315-datasheet-rev1.0.pdf
+    type: datasheet
+    title: "SSD1315 128 × 64 OLED/PLED 驱动控制器数据手册与命令附录"
+    document_id: SSD1315
+    revision: "Rev 1.0"
+    published: "2016-12"
+    obtained: 2026-07-29
+    url: unknown
+    sha256: "dad448e5444b6d570f731a677f92a29f8a387b5b4716e7fb75ada8fa1e1df9c3"
+    redistribution: unknown
+    notes:
+      - "正文 36 页，后附命令表和命令说明；文档标为 Advance Information。"
+      - "修订历史给出的首版生效日期为 2017-01-05。"
+  - file: originals/ssd1315-096-spi4-two-screen-example.c
+    type: example-source-code
+    title: "SSD1315 0.96 英寸 8051 四线 SPI 双画面示例"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-07-29
+    url: unknown
+    sha256: "f6f5aaa81ccfb44b6652c986e46cbf28a7680f5f36959aecba1d1fa77afb737e"
+    redistribution: unknown
+    notes:
+      - "GBK 编码、CRLF 换行；需要 CS/RES/RS/SCL/SI，不适用于本资料包的四针 I²C 板。"
+  - file: originals/ssd1315-096-spi4-two-screen-example.hex
+    type: example-firmware
+    title: "SSD1315 0.96 英寸 8051 四线 SPI 双画面示例固件"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-07-29
+    url: unknown
+    sha256: "b6c94efdddbeead82132b7d5d72156c16e5d10fe10f0b35e31527669776a2102"
+    redistribution: unknown
+    notes:
+      - "与随附 SPI 示例源码配套；目标器件和编译配置未说明。"
+
+extraction:
+  policy: selective
+  covered:
+    - module-identification
+    - mechanical-dimensions
+    - four-pin-interface
+    - derived-i2c-address
+    - schematic-power-path
+    - spi-example-interface-mismatch
+  not_covered:
+    - complete-command-reference
+    - validated-initialization-sequence
+    - model-suffix-color-mapping
+    - optical-characteristics
+    - reliability-tests
+  last_reviewed: 2026-07-29

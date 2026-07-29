@@ -1,0 +1,91 @@
+schema_version: 1
+id: hw-sensor-wheeltec-lf04
+title: "WHEELTEC LF04 四路红外巡线模块"
+kind: hardware
+category: sensor
+vendor: wheeltec
+models:
+  - LF04
+aliases:
+  - WHEELTEC 四路红外巡线模块
+  - 轮趣 LF04
+  - 四路红外循迹模块
+tags:
+  - infrared
+  - reflectance-sensor
+  - line-tracking
+  - lm339
+  - digital-output
+languages:
+  - zh-CN
+  - en
+status: active
+importance: high
+summary_updated: 2026-07-29
+
+sources:
+  - file: originals/lf04-user-manual-v1.0.pdf
+    type: user-manual
+    title: "LF04 四路红外巡线模块使用手册"
+    document_id: unknown
+    revision: "V1.0"
+    published: 2025-05-06
+    obtained: 2026-07-29
+    url: unknown
+    sha256: "ed647a5301ea2e107296bfd897e0af7dab4ce6e7b54e237f1cf8197d92ed6f91"
+    redistribution: unknown
+    notes:
+      - "原始文件名带 2026.5.19，但文档版本表只记录 V1.0、2025-05-06。"
+  - file: originals/lf04-schematic-rev6.0.pdf
+    type: schematic
+    title: "WHEELTEC 四路红外巡线模块原理图"
+    document_id: unknown
+    revision: "Rev 6.0"
+    published: 2025-04-02
+    obtained: 2026-07-29
+    url: unknown
+    sha256: "6a8c36346ce0855ed4e278637623fd43079e58b7f79f8e0b34301ac80fd60bc1"
+    redistribution: unknown
+  - file: originals/ti-lm339-family-datasheet-zh-rev-y.pdf
+    type: datasheet
+    title: "TI LM339B/LM2901B/LM339/LM239/LM139/LM2901 四路差分比较器中文数据手册"
+    document_id: ZHCSJ12Y
+    revision: "Rev Y"
+    published: "2025-03"
+    obtained: 2026-07-29
+    url: "https://www.ti.com/product/LM339"
+    sha256: "8e0a378f755beb20968fc44e08d32b14102ae73652169fd8075932f0861c06f3"
+    redistribution: unknown
+    notes:
+      - "URL 是 TI 产品页；截至入库日页面提供的控制文档已更新为 Rev Z，本地保留随附的 Rev Y。"
+      - "中文译文注明英文数据手册 SLCS006 为控制文档。"
+  - file: originals/xgbright-xg-itr20001-t24-datasheet-a5.1.pdf
+    type: datasheet
+    title: "XGBRIGHT XG-ITR20001/T24 反射式光电传感器规格书"
+    document_id: XG-ITR20001/T24
+    revision: "A5.1"
+    published: "2019"
+    obtained: 2026-07-29
+    url: "https://www.xgbright.com/"
+    sha256: "e5826feb97cbae0b188a8e58b5baa4c708d6b43c6af7d5dc8d4860740c31331b"
+    redistribution: unknown
+    notes:
+      - "URL 是规格书页脚列出的厂商主页，不是本地文件的已确认下载来源。"
+
+extraction:
+  policy: selective
+  covered:
+    - module-identification
+    - channel-mapping
+    - connector-pinout
+    - digital-output-polarity
+    - threshold-adjustment
+    - schematic-output-pullups
+    - sensor-identification
+  not_covered:
+    - validated-supply-range
+    - mechanical-dimensions
+    - measured-thresholds
+    - ambient-light-characterization
+    - complete-example-projects
+  last_reviewed: 2026-07-29
