@@ -32,7 +32,7 @@
 | 需求 | 推荐入口 | 来源定位 |
 | --- | --- | --- |
 | 接口、IO 和供电速查 | [板级接口与供电摘录](extracts/interfaces-power-and-debug.md) | 原理图 Sheet 2–8 |
-| 接口线序、功能说明和参数表 | [v1.0 用户手册](originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn-unlocked.pdf) | PDF 第 3–20 页 |
+| 接口线序、功能说明和参数表 | [v1.0 用户手册](originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn.pdf) | PDF 第 3–20 页 |
 | 完整连接与元件参数 | [V1.0 原理图](originals/robomaster-development-board-type-c-schematic-v1.0.pdf) | PDF 第 1–7 页，对应 Sheet 2–8 |
 | MCU 特性、电气参数和引脚 | [ST STM32F405/407](../../../mcu/st/stm32f405-407/README.md) | DS8626 Rev 12 |
 | 外设寄存器和工作方式 | [ST STM32F405/407](../../../mcu/st/stm32f405-407/README.md) | RM0090 Rev 22 |

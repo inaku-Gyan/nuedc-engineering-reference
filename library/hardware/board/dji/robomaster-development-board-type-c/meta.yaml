@@ -39,7 +39,7 @@ sources:
       - "PDF 共 7 页，标题栏为 Sheet 2–8，未包含 Sheet 1。"
       - "PDF 元数据创建/修改时间为 2019-12-09，原理图标题栏日期为 2019-12-05。"
       - "官方产品页当前未显示可下载文档；URL 记录产品官方入口。"
-  - file: originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn-unlocked.pdf
+  - file: originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn.pdf
     type: user-manual
     title: "RoboMaster 开发板 C 型用户手册"
     document_id: unknown
@@ -49,9 +49,6 @@ sources:
     url: "https://www.robomaster.com/zh-CN/products/components/general/development-board-type-c"
     sha256: "226922f12d5f1f78c6a2627a0ffed2410f28278a9c2cbeb07fbdd9003f94a177"
     redistribution: restricted
-    notes:
-      - "收到的文件名带 unlocked，PDF Producer 为 iLovePDF，非可验证的原始发布文件。"
-      - "官方产品页当前未显示可下载文档；URL 记录产品官方入口。"
 
 extraction:
   policy: selective

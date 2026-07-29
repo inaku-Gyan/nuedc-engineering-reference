@@ -58,7 +58,7 @@
 - 文件：`../originals/robomaster-development-board-type-c-schematic-v1.0.pdf`
 - 文档版本：V1.0
 - 章节/页码：PDF 第 1–7 页，原理图 Sheet 2–8
-- 辅助核验：`../originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn-unlocked.pdf`，
+- 辅助核验：`../originals/robomaster-development-board-type-c-user-manual-v1.0-zh-cn.pdf`，
   v1.0，PDF 第 5–20 页
 - 官方产品页：<https://www.robomaster.com/zh-CN/products/components/general/development-board-type-c>
 - 提取日期：2026-07-29
