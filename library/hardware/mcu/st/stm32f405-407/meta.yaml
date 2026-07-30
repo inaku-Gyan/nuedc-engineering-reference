@@ -74,6 +74,9 @@ extraction:
     - robomaster-c-board-mcu-linkage
     - timer-encoder-and-pwm-capabilities
     - c-board-relevant-timer-pin-mapping
+    - internal-flash-organization
+    - internal-flash-program-erase
+    - internal-flash-endurance-retention
     - errata-applicability
   not_covered:
     - complete-pin-multiplexing

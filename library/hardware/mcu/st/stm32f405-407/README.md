@@ -36,6 +36,7 @@ DS8626 Rev 12 第 1–2 页给出的系列级能力包括：
 | 系列特性、型号和封装 | [DS8626 数据手册](originals/stm32f405-407-datasheet-ds8626-rev12.pdf) | 第 1–20 页 |
 | 引脚、复用和存储映射 | [DS8626 数据手册](originals/stm32f405-407-datasheet-ds8626-rev12.pdf) | 第 4–5 章 |
 | 编码器定时器、PWM 与 C 板相关复用 | [定时器编码器与 PWM 能力](extracts/timer-encoder-and-pwm-capabilities.md) | DS8626 第 3.21 节、Table 9；RM0090 第 17.3.16 节 |
+| 片内 Flash 扇区、擦写、耐久度与停顿 | [片内 Flash 擦写速查](extracts/internal-flash-program-erase.md) | RM0090 第 3.3、3.6 节；DS8626 Table 40、42 |
 | 电气与时序参数 | [DS8626 数据手册](originals/stm32f405-407-datasheet-ds8626-rev12.pdf) | 第 6 章 |
 | 寄存器和外设工作方式 | [RM0090 参考手册](originals/stm32f4-reference-manual-rm0090-rev22.pdf) | 按外设章节查询 |
 | 已知芯片限制与规避方式 | [ES0182 勘误表](originals/stm32f405-407-errata-es0182-rev19.pdf) | 第 1–2 章 |
@@ -59,6 +60,7 @@ DS8626 Rev 12 第 1–2 页给出的系列级能力包括：
 - STM32F405/407 系列定位与主要能力；
 - C 板精确 MCU 型号与器件资料的关联；
 - 定时器硬件编码器/PWM 能力及 C 板相关引脚复用；
+- 片内 Flash 扇区组织、擦写约束、耗时、耐久度、执行停顿与缓存；
 - 勘误表按硅版本使用的基本要求。
 
 尚未整理：
