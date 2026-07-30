@@ -26,7 +26,7 @@ languages:
   - en
 status: active
 importance: high
-summary_updated: 2026-07-29
+summary_updated: 2026-07-30
 
 sources:
   - file: originals/gme12864-49-54-module-spec-v1.0.pdf
@@ -103,6 +103,7 @@ extraction:
     - gddram-page-layout
     - charge-pump-power-sequence
     - module-example-initialization-baseline
+    - software-recovery-without-reset-pin
     - spi-example-interface-mismatch
   not_covered:
     - complete-command-reference
@@ -110,4 +111,4 @@ extraction:
     - model-suffix-color-mapping
     - optical-characteristics
     - reliability-tests
-  last_reviewed: 2026-07-29
+  last_reviewed: 2026-07-30
