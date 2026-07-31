@@ -1,12 +1,14 @@
 schema_version: 1
-id: hw-sensor-generic-cd4051-eight-channel-grayscale-module
-title: "CD4051 复用式八路灰度巡线模块"
+id: hw-sensor-yahboom-cd4051-eight-channel-grayscale-module
+title: "Yahboom CD4051 复用式八路灰度巡线模块"
 kind: hardware
 category: sensor
-vendor: generic
+vendor: yahboom
 models:
   - unknown
 aliases:
+  - Yahboom 八路灰度模块
+  - 亚博八路灰度模块
   - 八路灰度模块
   - 八路灰度巡线模块
   - CD4051 八路巡线模块
@@ -37,6 +39,7 @@ sources:
     notes:
       - "用户随任务提供；PDF 元数据创建日期为 2025-11-12，但不能据此确认发布日期。"
       - "文档未标明厂商、正式型号、版本或来源 URL。"
+      - "用户于 2026-08-01 确认模块厂商为 Yahboom。"
   - file: originals/eight-channel-grayscale-module-troubleshooting.pdf
     type: application-note
     title: "模块识别不良解决方案"
@@ -49,6 +52,7 @@ sources:
     redistribution: unknown
     notes:
       - "用户随任务提供；文档未标明厂商、型号、版本或来源 URL。"
+      - "用户于 2026-08-01 确认模块厂商为 Yahboom。"
   - file: originals/ti-cd4051b-datasheet-schs047o.pdf
     type: datasheet
     title: "CD405xB CMOS Single 8-Channel Analog Multiplexer or Demultiplexer With Logic-Level Conversion"
@@ -60,7 +64,7 @@ sources:
     sha256: "e9ca1028acd71916188956f0e46a8dc7db3aa0691d43431f5713360dd167a342"
     redistribution: unknown
     notes:
-      - "用于核对传统 TI CD4051B 的逻辑阈值和地址到输出传播延迟；未知模块的芯片厂商未确认。"
+      - "用于核对传统 TI CD4051B 的逻辑阈值和地址到输出传播延迟；Yahboom 模块所焊复用器的具体芯片厂商和批次未确认。"
 
 extraction:
   policy: selective

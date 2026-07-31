@@ -49,8 +49,8 @@ library/hardware/<category>/<vendor>/<model>/
 
 ### 传感器模块
 
-- [CD4051 复用式八路灰度巡线模块](../library/hardware/sensor/generic/cd4051-eight-channel-grayscale-module/README.md)：
-  厂商未明的 5 V 八路反射式数字模块，涵盖 AD0～AD2/OUT 扫描、安装高度、
+- [Yahboom CD4051 复用式八路灰度巡线模块](../library/hardware/sensor/yahboom/cd4051-eight-channel-grayscale-module/README.md)：
+  5 V 八路反射式数字模块，涵盖 AD0～AD2/OUT 扫描、安装高度、
   识别不良处理及 3.3 V MCU 地址电平风险。
 - [WHEELTEC LF04](../library/hardware/sensor/wheeltec/lf04/README.md)：
   四路 940 nm 反射式巡线模块，涵盖通道/针位、比较器有效电平、阈值调节和
