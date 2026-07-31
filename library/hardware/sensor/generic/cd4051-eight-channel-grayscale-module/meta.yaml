@@ -1,0 +1,83 @@
+schema_version: 1
+id: hw-sensor-generic-cd4051-eight-channel-grayscale-module
+title: "CD4051 复用式八路灰度巡线模块"
+kind: hardware
+category: sensor
+vendor: generic
+models:
+  - unknown
+aliases:
+  - 八路灰度模块
+  - 八路灰度巡线模块
+  - CD4051 八路巡线模块
+tags:
+  - reflectance-sensor
+  - line-tracking
+  - cd4051
+  - digital-output
+  - multiplexer
+languages:
+  - zh-CN
+  - en
+status: active
+importance: high
+summary_updated: 2026-08-01
+
+sources:
+  - file: originals/eight-channel-grayscale-module-getting-started.pdf
+    type: user-manual
+    title: "8 路灰度模块简介"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-08-01
+    url: unknown
+    sha256: "5c24e2e84e6dc4bc1e0a5bbd70496eb339c69c8f5262b5c32952e79bf7098416"
+    redistribution: unknown
+    notes:
+      - "用户随任务提供；PDF 元数据创建日期为 2025-11-12，但不能据此确认发布日期。"
+      - "文档未标明厂商、正式型号、版本或来源 URL。"
+  - file: originals/eight-channel-grayscale-module-troubleshooting.pdf
+    type: application-note
+    title: "模块识别不良解决方案"
+    document_id: unknown
+    revision: unknown
+    published: unknown
+    obtained: 2026-08-01
+    url: unknown
+    sha256: "b7c4855c58e55a9ea6a5642657949b45fe379df206962edba56a5c7e29848972"
+    redistribution: unknown
+    notes:
+      - "用户随任务提供；文档未标明厂商、型号、版本或来源 URL。"
+  - file: originals/ti-cd4051b-datasheet-schs047o.pdf
+    type: datasheet
+    title: "CD405xB CMOS Single 8-Channel Analog Multiplexer or Demultiplexer With Logic-Level Conversion"
+    document_id: SCHS047O
+    revision: "Rev O"
+    published: "2026-05"
+    obtained: 2026-08-01
+    url: "https://www.ti.com/lit/ds/symlink/cd4051b.pdf"
+    sha256: "e9ca1028acd71916188956f0e46a8dc7db3aa0691d43431f5713360dd167a342"
+    redistribution: unknown
+    notes:
+      - "用于核对传统 TI CD4051B 的逻辑阈值和地址到输出传播延迟；未知模块的芯片厂商未确认。"
+
+extraction:
+  policy: selective
+  covered:
+    - module-identification
+    - connector-functions
+    - channel-address-mapping
+    - digital-output
+    - installation-height
+    - troubleshooting
+    - address-input-level
+    - address-to-output-delay
+  not_covered:
+    - schematic
+    - exact-mechanical-dimensions
+    - output-stage
+    - module-current
+    - measured-reflectance
+    - physical-left-right-channel-order
+  last_reviewed: 2026-08-01
